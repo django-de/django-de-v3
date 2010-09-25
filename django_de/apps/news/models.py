@@ -9,8 +9,7 @@ class NewsItemManager(models.Manager):
         """
         Filters all items, that haven't been exported yet.
         """
-        return self.filter(models.Q(twitter_id__isnull=True) |
-                models.Q(twitter_id=""))
+        return self.filter(twitter_id__isnull=True)
 
 
 class NewsItem(models.Model):
@@ -26,7 +25,7 @@ class NewsItem(models.Model):
             auto_now_add=True)
     author = models.ForeignKey(User, verbose_name=_("author"))
 
-    twitter_id = models.SlugField(verbose_name=_("Twitter ID"),
+    twitter_id = models.IntegerField(verbose_name=_("Twitter ID"),
             blank=True, null=True)
 
     objects = NewsItemManager()

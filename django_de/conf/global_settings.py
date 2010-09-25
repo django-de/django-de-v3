@@ -99,4 +99,5 @@ INSTALLED_APPS = (
     'django_de.apps.jobs',
     'django_de.apps.companies',
     'django_de.apps.usergroups',
+    'django_de.apps.news',
 )

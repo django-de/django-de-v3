@@ -11,6 +11,9 @@ class NewsItemManager(models.Manager):
         """
         return self.filter(twitter_id__isnull=True)
 
+    def exported(self):
+        return self.filter(twitter_id__isnull=False)
+
 
 class NewsItem(models.Model):
     """
@@ -23,7 +26,7 @@ class NewsItem(models.Model):
     body = models.TextField(verbose_name=_("body"), blank=True, null=True)
     pub_date = models.DateTimeField(verbose_name=_("published at"),
             auto_now_add=True)
-    author = models.ForeignKey(User, verbose_name=_("author"))
+    author = models.ForeignKey(User, verbose_name=_("author"), null=True)
 
     twitter_id = models.IntegerField(verbose_name=_("Twitter ID"),
             blank=True, null=True)
@@ -31,7 +34,7 @@ class NewsItem(models.Model):
     objects = NewsItemManager()
 
     def as_twitter_message(self):
-        if self.body is None:
+        if not self.body:
             return self.title
         item_url = 'http://%s/n/%s' % (
             Site.objects.get_current().domain,

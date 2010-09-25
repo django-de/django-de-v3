@@ -95,4 +95,8 @@ INSTALLED_APPS = (
     
     'staticfiles',
     'south',
+
+    'django_de.apps.jobs',
+    'django_de.apps.companies',
+    'django_de.apps.usergroups',
 )

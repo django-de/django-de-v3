@@ -28,7 +28,8 @@ class NewsItem(models.Model):
     body = models.TextField(verbose_name=_("body"), blank=True, null=True)
     pub_date = models.DateTimeField(verbose_name=_("published at"),
             default=datetime.datetime.now)
-    author = models.ForeignKey(User, verbose_name=_("author"), null=True)
+    author = models.ForeignKey(User, verbose_name=_("author"), null=True,
+            blank=True)
 
     twitter_id = models.IntegerField(verbose_name=_("Twitter ID"),
             blank=True, null=True)

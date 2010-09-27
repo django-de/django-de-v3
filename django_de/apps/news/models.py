@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.utils.translation import gettext_lazy as _
 
+import datetime
+
 
 class NewsItemManager(models.Manager):
     def to_export(self):
@@ -25,7 +27,7 @@ class NewsItem(models.Model):
     title = models.CharField(verbose_name=_("title"), max_length=140)
     body = models.TextField(verbose_name=_("body"), blank=True, null=True)
     pub_date = models.DateTimeField(verbose_name=_("published at"),
-            auto_now_add=True)
+            default=datetime.datetime.now)
     author = models.ForeignKey(User, verbose_name=_("author"), null=True)
 
     twitter_id = models.IntegerField(verbose_name=_("Twitter ID"),
@@ -41,4 +43,7 @@ class NewsItem(models.Model):
             str(self.pk)
             )
         return self.title[:-(len(item_url)+4)] + '... ' + item_url
+
+    class Meta:
+        ordering = ['-pub_date']
 

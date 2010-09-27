@@ -3,8 +3,11 @@ This command allows the news in the db and on twitter to be synchrnoized.
 """
 from optparse import make_option
 import logging
+import tweepy
+import pytz
 
 from django.core.management.base import BaseCommand, CommandError
+from django.conf import settings
 
 from ... import models, utils
 
@@ -16,6 +19,8 @@ class Command(BaseCommand):
     option_list = BaseCommand.option_list + (
             make_option('--dry-run', action='store_true',
                 dest='dryrun', default=False),
+            make_option('--page-size', action='store',
+                dest='pagesize', default=100),
             )
 
     def handle(self, *args, **options):
@@ -31,17 +36,29 @@ class Command(BaseCommand):
         self.export_to_twitter(api, options)
 
     def import_from_twitter(self, api, last_sync, options):
+        pagesize = int(options['pagesize'])
+        local_tz = pytz.timezone(settings.TIME_ZONE)
         LOG.info("Following tweets are imported")
-        # TODO: Use cursor
-        for tweet in api.user_timeline(since_id=last_sync):
-            if tweet.in_reply_to_status_id is not None:
-                continue
-            LOG.info(" + " + str(tweet.id))
-            if options['dryrun']:
-                continue
-            item = models.NewsItem(title=tweet.text, pub_date=tweet.created_at,
-                    twitter_id=tweet.id)
-            item.save()
+        # In general the Twitter API provides data in a reverse chronological
+        # fashion. So to receive a mostly valid sequence of items, the items
+        # have to be reversed before being processed. The downside to this is
+        # that also the resulting pages should be traversed in reverse order.
+        # But for the primary scenario, a page limit of 100 should be more than
+        # enough to not require paging at all. For all other cases, items
+        # should always be presented sorted by pub_date.
+        for page in tweepy.Cursor(api.user_timeline, since_id=last_sync,
+                count=100).pages():
+            for tweet in reversed(page):
+                if tweet.in_reply_to_status_id is not None:
+                    continue
+                LOG.info(" + " + str(tweet.id))
+                if options['dryrun']:
+                    continue
+                item = models.NewsItem(title=tweet.text,
+                        pub_date=pytz.utc.localize(tweet.created_at)\
+                                .astimezone(local_tz),
+                        twitter_id=tweet.id)
+                item.save()
 
     def export_to_twitter(self, api, options):
         LOG.info("Exporting following news items:")

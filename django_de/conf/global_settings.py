@@ -74,6 +74,10 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
 )
 
+WAKAWAKA_TEMPLATE_DIR = os.path.join(PROJECT_DIR, 'templates/wiki')
+WAKAWAKA_TEMPLATE_DEFAULT = os.path.join(PROJECT_DIR, 'templates/wiki/default.html')
+WAKAWAKA_DEFAULT_INDEX = 'WikiIndex'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_DIR, '..', 'media')
 
@@ -92,7 +96,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    
+
     'staticfiles',
     'south',
 
@@ -100,4 +104,5 @@ INSTALLED_APPS = (
     'django_de.apps.companies',
     'django_de.apps.usergroups',
     'django_de.apps.news',
+    'django_de.apps.wakawaka',
 )

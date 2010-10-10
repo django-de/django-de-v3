@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
+from django.core.urlresolvers import reverse as url_reverse
+from django.template.defaultfilters import slugify
 from django.utils.translation import gettext_lazy as _
 
 import datetime
@@ -44,6 +46,10 @@ class NewsItem(models.Model):
             str(self.pk)
             )
         return self.title[:-(len(item_url)+4)] + '... ' + item_url
+
+    def get_absolute_url(self):
+        return url_reverse('news_item', kwargs=dict(
+                slug=slugify(self.title[:30]), pk=self.pk))
 
     class Meta:
         ordering = ['-pub_date']

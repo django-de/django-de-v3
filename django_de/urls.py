@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     (r'^', include('django_de.apps.wakawaka.urls')),
+    (r'^news/', include('django_de.apps.news.urls')),
+    (r'^test', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
 )
 
 

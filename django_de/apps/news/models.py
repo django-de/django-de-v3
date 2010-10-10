@@ -35,6 +35,8 @@ class NewsItem(models.Model):
 
     twitter_id = models.IntegerField(verbose_name=_("Twitter ID"),
             blank=True, null=True)
+    external_tag = models.SlugField(verbose_name=_("external tag"),
+            blank=True, null=True)
 
     objects = NewsItemManager()
 

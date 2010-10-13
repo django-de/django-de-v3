@@ -2,3 +2,4 @@ django==1.2.3
 django-staticfiles==0.3.2
 south==0.7.2
 tweepy==1.7.1
+django-pagination

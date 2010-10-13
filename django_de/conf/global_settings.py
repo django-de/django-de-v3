@@ -99,6 +99,7 @@ INSTALLED_APPS = (
 
     'staticfiles',
     'south',
+    'pagination',
 
     'django_de.apps.jobs',
     'django_de.apps.companies',

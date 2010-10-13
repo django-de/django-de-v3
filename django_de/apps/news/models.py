@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse as url_reverse
@@ -52,6 +53,10 @@ class NewsItem(models.Model):
     def get_absolute_url(self):
         return url_reverse('news_item', kwargs=dict(
                 slug=slugify(self.title[:30]), pk=self.pk))
+
+    def get_twitter_url(self):
+        return 'http://twitter.com/%s/status/%d' % (settings.TWITTER_USERNAME,
+                self.twitter_id,)
 
     class Meta:
         ordering = ['-pub_date']

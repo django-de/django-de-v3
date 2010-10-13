@@ -1,0 +1,10 @@
+<h1>{{ item.title }}</h1>
+<p class="pubdate">{{ item.pub_date }}</p>
+
+{% if item.body %}
+{{ item.body }}
+{% endif %}
+
+{% if item.twitter_id %}
+<a href="{{ item.get_twitter_url }}">Auf Twitter</a>
+{% endif %}

@@ -1,0 +1,15 @@
+Einstellungen
+-------------
+
+Für die Twitter-Integration wird eine Reihe von Keys und Secrets benötigt.
+Die entsprechenden Werte können im App-Profil auf dev.twitter.com nachgelesen
+werden.
+
+* TWITTER_CONSUMER_KEY
+* TWITTER_CONSUMER_SECRET
+* TWITTER_ACCESS_TOKEN_KEY
+* TWITTER_ACCESS_TOKEN_SECRET
+
+Für die Darstellung wird zusätzlich noch folgende Einstellung benötigt:
+
+* TWITTER_USERNAME

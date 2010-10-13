@@ -1,6 +1,7 @@
 from django.template import RequestContext
 from django.conf import settings
 from django.core.paginator import Paginator
+from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.db.models.query import Q
 
@@ -50,3 +51,7 @@ def view_item(request, pk, slug=None, template_name=None):
         'item': item,
         }, context_instance=RequestContext(request))
     pass
+
+def redirect_item_shortcut(request, pk):
+    item = get_object_or_404(models.NewsItem.objects, pk=pk)
+    return HttpResponseRedirect(item.get_absolute_url())

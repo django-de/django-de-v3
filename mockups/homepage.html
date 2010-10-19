@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    
+    <link rel="stylesheet" href="css/base.grid.css"/>
+    <link rel="stylesheet" href="css/base.layout.css"/>
+    <link rel="stylesheet" href="css/base.homepage.css"/>
+    
+</head>
+<body>
+
+    <header id="pageheader">        
+        <div class="wrapper">
+            <h1 class="grid3 first"><a href="#">Django</a></h1>
+            <nav class="grid9">
+                <a class="active" href="#">Home</a> / 
+                <a href="#">Infos</a> / 
+                <a href="#">News</a> / 
+                <a href="#">Verein</a> / 
+                <a href="#">Jobs</a>
+            </nav>
+            
+            <div class="grid8 first" id="teaser">
+                <p class="title">Django ist ein Python- Web-Framework für die schnelle
+                    Entwicklung von sauberen, pragmatischen Lösungen.</p>
+                    
+                <p>Da Django ursprünglich für Nachrichtenplattformen entwickelt
+                    wurde, ist es darauf optimiert, die straffen Deadlines in
+                    Online-Redaktionen einzuhalten und trotzdem den hohen
+                    technischen Ansprüchen von hochperformanten und eleganten
+                    Webanwendungen gerecht zu werden.</p>
+            </div>
+            
+            <div class="grid4">
+                logos
+            </div>
+        </div>        
+    </header>
+    
+    <div id="page">
+        <div class="wrapper">
+            
+            <h1>Ein kurzer Überblick</h1>
+            
+            
+            <div class="scrollable">
+            <div class="items">
+                
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <div class="item">
+                        <h2>Open Source</h2>
+                        <p>Django ist Open Source (BSD-Lizenz). Man kann als Entwickler also einerseits in den Quellcode schauen, um die Funktionalität zu verstehen, andererseits auch an der Weiterentwicklung von Django teilnehmen. Die Benutzung von Django ist kostenlos.</p>
+                    </div>
+                    <div class="item">
+                        <h2>Template-Engine</h2>
+                        <p>Die Templates werden in einer eigenen Template- sprache geschrieben. Sie bringt bereits viele nützliche Helfer zum Erstellen der Ausgabe mit. Die umfangreiche Tag-Bibliothek kann leicht um eigene Funktionen erweitert werden.</p>
+                    </div>
+                    <div class="item">
+                        <h2>Freundliche Community</h2>
+                        <p>Sollten einmal Probleme auftreten, bei denen auch die Dokumentation nicht mehr weiterhilft, kann man sich über die Mailingliste (django-users) oder den IRC-Channel (#django auf Freenode) Rat von der Django-Community holen.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="item">
+                        <h2>Django Foundation</h2>
+                        <p>Die Entwicklung von Django wird durch die in den USA ansässige Django Foundation beobachtet und gesteuert. Damit sind sowohl die Weiterentwicklung der Software als auch der Schutz vor einem Missbrauch des Namens sichergestellt.</p>
+                    </div>
+                    <div class="item">
+                        <h2>Don’t Repeat Yourself</h2>
+                        <p>Django ist nach dem DRY-Prinzip programmiert und organisiert. Dieses besagt, dass jede Wissenseinheit nur eine eindeutige und schlüssig positionierte Repräsentation im Code haben darf und Redundanz vermieden wird. Nach diesem Prinzip sollten auch die mit Django entwickelten Projekte erstellt werden.</p>
+                    </div>
+                    <div class="item">
+                        <h2>Mtv – ein Mvc-Muster</h2>
+                        <p>Django trennt – wie durch das MVC-Muster vorgegeben – Datenrepräsentation (Model), Darstellung (View) und Logik (Controller) voneinander.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="item">
+                        <h2>Eingebautes Admintool</h2>
+                        <p>Das automatisch erzeugte Admin-Interface hilft bei der Erstellung und Bearbeitung der Daten. Es kann bei Bedarf leicht angepasst und erweitert werden.</p>
+                    </div>
+                    <div class="item">
+                        <h2>Elegantes Url-Design</h2>
+                        <p>Jede URL kann durch den Entwickler nahezu beliebig selbst bestimmt werden. Die URL wird beim Aufruf durch einen regulären Ausdruck mit dem entsprechen- den Inhalt verknüpft.</p>
+                    </div>
+                    <div class="item">
+                        <h2>Object-Relational-Mapper</h2>
+                        <p>Der Object-Relational-Mapper (ORM) ermöglicht einen einfachen und schnellen Zugriff auf die Datenbank. Es werden verschiedene Datenbanken unterstüzt.</p>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+            
+            <div class="scrollableNavigator"></div>
+                        
+        </div>
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <div id="login" class="first">
+                first
+            </div>
+            
+            <div class="grid4 first">
+                <p>Django-de wird vom Deutschen Django-Verein e.V.
+                    betrieben. Weitere rechtliche Informationen
+                    findest du im Impressum.</p>
+                <p>Django ist eine eingetragene Marke der
+                    Django Software Foundation.</p>
+            </div>
+            
+            <div class="grid1"></div>
+            
+            <div class="grid7">
+                nav
+            </div>
+        </div>
+    </footer>
+    
+    <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".scrollable").height($(".items").height());
+	    $(".scrollable").scrollable({
+	        items: '.slide',
+	        circular: true
+	    }).navigator(".scrollableNavigator");
+    });
+    </script>
+</body>
+</html>

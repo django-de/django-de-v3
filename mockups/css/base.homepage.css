@@ -1,0 +1,80 @@
+/* ***************************************************************************
+   Teaser
+   ************************************************************************ */
+
+#teaser{
+    color: #e5ecd9;
+    font-size: 18px;
+    line-height: 1.5em;
+    text-shadow: 1px 1px 0 #386116;
+}
+
+#teaser p.title{
+    font-size: 29px;
+    font-weight: bold;
+    line-height: 1.2em;
+    opacity: 1;
+    text-shadow: 2px 2px 2px #1b2f0b;
+    color: White;
+}
+
+/* ***************************************************************************
+   Überblick
+   ************************************************************************ */
+
+.scrollable {
+    font-size: 15px;
+    color: #8a8a8a;
+    line-height: 1.5em;
+    
+	/* Slide settings */
+	position:relative;
+	overflow:hidden;
+	width: 940px;
+}
+
+.scrollable .items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+}
+
+.scrollable .items .item{
+    width: 280px;
+    margin-right: 50px;
+    float: left;
+}
+
+.scrollable .items > div {
+	float:left;
+}
+
+.scrollable .items h2{
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 0 0.6em 0;
+}
+
+.scrollable .items p{
+    margin: 0;
+}
+
+.scrollableNavigator{
+    text-align: right;
+    border-bottom: 1px solid #cbcbcb;
+    padding-bottom: 12px;
+}
+
+.scrollableNavigator a{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-image: url(../gfx/navi.png);
+    background-position: 0 10px;
+    margin-right: 5px;
+    -webkit-transition: background-position 0.1s linear;
+}
+
+.scrollableNavigator a.active{
+    background-position: 0 0;
+}

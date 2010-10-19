@@ -1,3 +1,6 @@
+nav, header, footer, aside {
+    display: block;
+}
 body{
     font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
     margin: 0;

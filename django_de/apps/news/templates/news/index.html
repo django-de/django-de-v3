@@ -1,0 +1,8 @@
+{% load pagination_tags %}
+<ul>
+    {% for item in page_obj.object_list %}
+    <li><h2><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h2>
+        <p class="pubdate">{{ item.pub_date }}</p></li>
+    {% endfor %}
+</ul>
+{% paginate %}

@@ -9,7 +9,15 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     (r'^', include('django_de.apps.wakawaka.urls')),
+    (r'^news/', include('django_de.apps.news.urls')),
+    (r'^n/(?P<pk>.*)/$', 'django_de.apps.news.views.redirect_item_shortcut'),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^n/(?P<pk>.*)/$',
+            'django_de.apps.news.views.redirect_item_shortcut'),
+    )
 
 
 # Static Media File Serving

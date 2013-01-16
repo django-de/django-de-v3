@@ -1,8 +1,0 @@
-<ul>
-    {% for item in items %}
-    <li>
-        <p class="content">{{ item.title }}{% if item.body %}...{% endif %}</p>
-        <a href="{{ item.get_absolute_url }}" class="pubdate">{{ item.pub_date|date }}</a>
-    </li>
-    {% endfor %}
-</ul>

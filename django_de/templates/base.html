@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}django-de.org{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+
+        {# TODO: add django-compressor #}
+        <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/djangode.css" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <header class="row">
+                <div class="span4">
+                    <img src="{{ STATIC_URL }}img/djangode.png" alt="DJANGOde" class="logo" />
+                </div>
+                <nav class="span8">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Infos</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Verein</a></li>
+                        <li><a href="#">Jobs</a></li>
+                    </ul>
+                </nav>
+            </header>
+            {% block container %}
+            {% endblock %}
+        </div>
+
+        {# TODO: add django-compressor #}
+        <script src="{{ STATIC_URL }}js/jquery-1.9.0.min.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "list_base.html" %}
+
+{% block title %}Upcoming Events | django-de.org{% endblock %}
+
+{% block headline %}Events{% endblock %}
+
+{% block content %}
+    {% include "events/object_list.html" %}
+{% endblock %}
+
+{% block aside %}
+    <div class="minibox">
+        <h3>Filter</h3>
+        <p class="dates">Sources, Monate, Jahre</p>
+    </div>
+{% endblock %}

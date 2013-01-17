@@ -15,5 +15,7 @@ urlpatterns = patterns('',
     url(r'^n/(?P<pk>.*)/$', 'django_de.news.views.news_shortcut',
         name='news_shortcut'),
 
+    (r'^events/', include('django_de.events.urls')),
+
     (r'^$', TemplateView.as_view(template_name='home.html')),
 )

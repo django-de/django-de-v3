@@ -1,0 +1,19 @@
+<ul class="list">
+    {% for object in object_list %}
+    <li>
+        <div class="date">
+            <span class="month">{{ object.start|date:"M" }}</span><br />
+            <span class="day">{{ object.start|date:"d" }}</span>
+        </div>
+        <div class="item">
+            <span>{{ object.title|truncatechars:40 }}</span><br />
+            <small>
+                {{ object.description }}
+                {% if object.url %}
+                    <a href="{{ object.url }}">mehr...</a>
+                {% endif %}
+            </small>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

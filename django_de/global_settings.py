@@ -1,9 +1,20 @@
 import os
+import sys
 
-PROJECT_ROOT = os.path.join(os.path.dirname(__file__))
+PYTHON_BIN = os.path.dirname(sys.executable)
+if not os.path.exists(os.path.join(PYTHON_BIN, 'activate_this.py')):
+    print "Need to run in an virtualenv"
 
-DEBUG = True
+VAR_ROOT = os.path.join(os.path.dirname(PYTHON_BIN), 'var')
+if not os.path.exists(VAR_ROOT):
+    os.mkdir(VAR_ROOT)
+
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+
+#==============================================================================
+# I18N
+#==============================================================================
 
 TIME_ZONE = 'Europe/Berlin'
 
@@ -15,19 +26,25 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, '..', '..', 'site_media')
-MEDIA_URL = '/site_media/'
+#==============================================================================
+# Static File Handling
+#==============================================================================
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, '..', '..', 'static_media')
+MEDIA_ROOT = os.path.join(VAR_ROOT, 'media')
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(VAR_ROOT, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static_media'),
-)
+STATICFILES_DIRS = ()
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+#==============================================================================
+# Application
+#==============================================================================
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -48,10 +65,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'django_de.urls'
 WSGI_APPLICATION = 'django_de.wsgi.application'
 
-TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT, 'templates'),
-)
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -67,5 +80,40 @@ INSTALLED_APPS = (
     'south',
     'pagination',
 
+    'django_de',
     'django_de.news',
 )
+
+
+#==============================================================================
+# Logging
+#==============================================================================
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}
+
+
+#==============================================================================
+# 3rd party
+#==============================================================================

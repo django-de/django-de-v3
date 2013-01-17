@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load news_tags events_tags %}
+{% load news_tags events_tags version_tags %}
 
 {% block container %}
     <div class="row title">
@@ -20,7 +20,7 @@
         <div class="span4">
             <div class="releasebox">
                 <strong>Last Release:</strong><br />
-                <span class="version"style="">1.4.3</span>
+                <span class="version"style="">{% latest_stable_version %}</span>
             </div>
         </div>
     </div>

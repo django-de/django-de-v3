@@ -2,10 +2,9 @@ from datetime import datetime
 import icalendar
 import logging
 from optparse import make_option
-import pytz
 import urllib2
 
-from django.conf import settings
+from django.utils import timezone
 from django.core.management.base import BaseCommand
 
 from ... import models
@@ -25,7 +24,7 @@ class Command(BaseCommand):
         for source in models.Source.objects.filter(is_active=True):
             LOG.info('Importing %s' % source.name)
 
-            local_tz = pytz.timezone('Europe/Berlin')
+            local_tz = timezone.get_default_timezone()
 
             try:
                 LOG.debug('Fetching calendar from %s' % source.url)

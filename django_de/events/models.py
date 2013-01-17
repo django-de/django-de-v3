@@ -29,7 +29,6 @@ class Event(models.Model):
 
         return super(Event, self).save(*args, **kwargs)
 
-
     def clean(self):
         if self.start > self.end:
             raise ValidationError(_('Start date after end date.'))

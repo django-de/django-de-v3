@@ -40,6 +40,9 @@ class NewsItem(models.Model):
 
     objects = NewsItemManager()
 
+    def __unicode__(self):
+        return self.title
+
     def save(self, *args, **kwargs):
         if not self.pk and not self.slug:
             self.slug = slugify(self.title[:30])

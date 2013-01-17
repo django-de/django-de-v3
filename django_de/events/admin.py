@@ -3,5 +3,15 @@ from django.contrib import admin
 from .models import Event, Source
 
 
-admin.site.register(Event)
-admin.site.register(Source)
+class EventAdmin(admin.ModelAdmin):
+    list_display = ['title', 'start', 'end', 'slug']
+    date_hierarchy = 'start'
+
+
+class SourceAdmin(admin.ModelAdmin):
+    list_display = ['name', 'url', 'is_active']
+    list_filter = ['is_active']
+
+
+admin.site.register(Event, EventAdmin)
+admin.site.register(Source, SourceAdmin)

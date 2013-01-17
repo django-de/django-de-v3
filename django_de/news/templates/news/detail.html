@@ -1,0 +1,23 @@
+{% extends "article_base.html" %}
+{% load markup %}
+
+{% block title %}{{ object.title }} | django-de.org{% endblock %}
+
+{% block headline %}{{ object.title }}{% endblock %}
+
+{% block article %}
+    {% if object.body %}
+        {{ object.body|markdown }}
+    {% endif %}
+
+    {% if object.twitter_id %}
+        <a href="{{ object.get_twitter_url }}">Auf Twitter</a>
+    {% endif %}
+{% endblock %}
+
+{% block aside %}
+    <div class="minibox">
+        <h3>More about...</h3>
+        <p class="pubdate">{{ object.pub_date }}</p>
+    </div>
+{% endblock %}

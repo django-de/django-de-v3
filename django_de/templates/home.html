@@ -1,12 +1,13 @@
 {% extends "base.html" %}
+{% load news_tags %}
 
 {% block container %}
-    <div class="row teaser">
+    <div class="row title">
         <div class="span8">
-            <p class="title">
+            <h2>
                 Django ist ein Python-Web-Framework für die schnelle
                 Entwicklung von sauberen, pragmatischen Lösungen.
-            </p>
+            </h2>
 
             <p>
                 Ursprünglich für Nachrichtenplattformen entwickelt, ist
@@ -24,117 +25,14 @@
         </div>
     </div>
 
-    <div class="row home">
+    <div class="row content">
         <div class="span6">
             <div class="listbox" style="top:-50px;">
                 <h3>Termine</h3>
-                <ul>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span>Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                </ul>
             </div>
             <div class="listbox" style="top:-20px">
                 <h3>News</h3>
-                <ul>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="date">
-                            <span class="month">Aug</span><br />
-                            <span class="day">26</span>
-                        </div>
-                        <div class="title">
-                            <span style="">Django Usergroup Berlin</span><br />
-                            <small>Die Usergroup trifft sich wieder... Die Usergroup trifft sich wieder...</small>
-                        </div>
-                    </li>
-                </ul>
+                {% show_news 5 %}
             </div>
         </div>
         <div class="span3" style="padding-top:10px">

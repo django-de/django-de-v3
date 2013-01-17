@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <div class="row title">
+        <div class="span12">
+            <h2>{% block headline %}{% endblock %}</h2>
+        </div>
+    </div>
+
+    <div class="row content">
+        <article class="span9">
+            {% block article %}{% endblock %}
+        </article>
+        <aside class="span3" style="margin-left:10px">
+            {% block aside %}{% endblock %}
+        </aside>
+    </div>
+</div>
+{% endblock %}

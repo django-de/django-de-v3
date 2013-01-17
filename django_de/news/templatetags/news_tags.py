@@ -8,7 +8,7 @@ register = template.Library()
 
 class ShowNewsToken(template.Node):
     def __init__(self, num, tmpl):
-        self.tmpl = 'news/news_tag.html'
+        self.tmpl = 'news/object_list.html'
         self.num = 5
 
         if num is not None:
@@ -36,7 +36,7 @@ class ShowNewsToken(template.Node):
         items = models.NewsItem.objects.order_by('-pub_date')[:num]
         tmpl = template.loader.get_template(template_name)
         context.push()
-        context.update({'items': items})
+        context.update({'object_list': items})
         result = tmpl.render(context)
         context.pop()
 

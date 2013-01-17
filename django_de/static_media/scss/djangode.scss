@@ -35,10 +35,10 @@ header.row {
     }
 }
 
-div.teaser {
+div.title {
     border-top: 2px solid #0a271f;
     background-color: #0d342a;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 
     p {
         color: #e5ecd9;
@@ -46,15 +46,19 @@ div.teaser {
         line-height: 1.5em;
         padding-left: 15px;
         padding-top: 10px;
+        padding-bottom: 25px;
 
-        &.title {
-            padding-top: 20px;
-            font-size: 29px;
-            line-height: 1.2em;
-            opacity: 1;
-            text-shadow: 2px 2px 2px #1b2f0b;
-            color: #ffffff;
-        }
+    }
+
+    h2 {
+        font-size: 29px;
+        font-weight: normal;
+        line-height: 1.2em;
+        margin: 10px 0px;
+        padding: 20px 0px 0px 15px;
+        opacity: 1;
+        text-shadow: 2px 2px 2px #1b2f0b;
+        color: #ffffff;
     }
 
     div.releasebox {
@@ -73,9 +77,47 @@ div.teaser {
     }
 }
 
-div.home {
+div.content {
     background-color: #dfe7e5;
     border-top: 10px solid #ffffff;
+
+    ul.list {
+        margin-left: 1px;
+
+        li {
+            clear: left;
+            list-style-type: none;
+
+            div.date {
+                float: left;
+
+                span.month {
+                    color: #95c537;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                }
+
+                span.day {
+                    padding: 4px 1px;
+                    text-align: center;
+                    width: 35px;
+                    display: inline-block;
+                    background-color: #95c537;
+                    color: #ffffff;
+                    font-size: 24px;
+                }
+            }
+            div.item {
+                margin-left: 48px;
+                padding-top: 6px;
+
+                span {
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 
     div.listbox {
         position: relative;
@@ -90,44 +132,6 @@ div.home {
             line-height: 37px;
             font-weight: normal;
             color: #ffffff;
-        }
-
-        ul {
-            margin-left: 1px;
-
-            li {
-                clear: left;
-                list-style-type: none;
-
-                div.date {
-                    float: left;
-
-                    span.month {
-                        color: #95c537;
-                        font-size: 10px;
-                        text-transform: uppercase;
-                    }
-
-                    span.day {
-                        padding: 4px 1px;
-                        text-align: center;
-                        width: 35px;
-                        display: inline-block;
-                        background-color: #95c537;
-                        color: #ffffff;
-                        font-size: 24px;
-                    }
-                }
-                div.title {
-                    margin-left: 48px;
-                    padding-top: 6px;
-
-                    span {
-                        font-weight: bold;
-                        font-size: 18px;
-                    }
-                }
-            }
         }
     }
 
@@ -149,5 +153,9 @@ div.home {
             font-size: 13px;
             padding-left: 12px;
         }
+    }
+
+    article {
+        padding-top:10px;
     }
 }

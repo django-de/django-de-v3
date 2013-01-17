@@ -27,7 +27,7 @@ class Command(BaseCommand):
 
         api = utils.get_twitter_api()
         self.import_from_twitter(api, last_twitter_id, options)
-        self.export_to_twitter(api, options)
+        #self.export_to_twitter(api, options)
 
     def import_from_twitter(self, api, last_sync, options):
         pagesize = int(options['pagesize'])

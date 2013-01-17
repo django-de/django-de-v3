@@ -1,0 +1,16 @@
+{% extends "list_base.html" %}
+
+{% block title %}News | django-de.org{% endblock %}
+
+{% block headline %}News{% endblock %}
+
+{% block content %}
+    {% include "news/object_list.html" %}
+{% endblock %}
+
+{% block aside %}
+    <div class="minibox">
+        <h3>Archive</h3>
+        <p class="dates">Monate, Jahre</p>
+    </div>
+{% endblock %}

@@ -23,86 +23,91 @@ header.row {
         header.row nav > ul li a:hover {
           color: #728882; }
 
-div.teaser {
+div.title {
   border-top: 2px solid #0a271f;
   background-color: #0d342a;
-  padding-bottom: 50px; }
-  div.teaser p {
+  padding-bottom: 25px; }
+  div.title p {
     color: #e5ecd9;
     font-size: 13px;
     line-height: 1.5em;
     padding-left: 15px;
-    padding-top: 10px; }
-    div.teaser p.title {
-      padding-top: 20px;
-      font-size: 29px;
-      line-height: 1.2em;
-      opacity: 1;
-      text-shadow: 2px 2px 2px #1b2f0b;
-      color: #ffffff; }
-  div.teaser div.releasebox {
+    padding-top: 10px;
+    padding-bottom: 25px; }
+  div.title h2 {
+    font-size: 29px;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin: 10px 0px;
+    padding: 20px 0px 0px 15px;
+    opacity: 1;
+    text-shadow: 2px 2px 2px #1b2f0b;
+    color: #ffffff; }
+  div.title div.releasebox {
     color: #ffffff;
     margin: 20px 40px;
     background-color: #95c537;
     padding: 10px 10px;
     text-align: center; }
-    div.teaser div.releasebox span.version {
+    div.title div.releasebox span.version {
       font-size: 40px;
       font-weight: bold;
       line-height: 50px;
       font-size: bold; }
 
-div.home {
+div.content {
   background-color: #dfe7e5;
   border-top: 10px solid white; }
-  div.home div.listbox {
+  div.content ul.list {
+    margin-left: 1px; }
+    div.content ul.list li {
+      clear: left;
+      list-style-type: none; }
+      div.content ul.list li div.date {
+        float: left; }
+        div.content ul.list li div.date span.month {
+          color: #95c537;
+          font-size: 10px;
+          text-transform: uppercase; }
+        div.content ul.list li div.date span.day {
+          padding: 4px 1px;
+          text-align: center;
+          width: 35px;
+          display: inline-block;
+          background-color: #95c537;
+          color: #ffffff;
+          font-size: 24px; }
+      div.content ul.list li div.item {
+        margin-left: 48px;
+        padding-top: 6px; }
+        div.content ul.list li div.item span {
+          font-weight: bold;
+          font-size: 18px; }
+  div.content div.listbox {
     position: relative;
     background-color: #ffffff;
     padding: 2px 10px;
     box-shadow: 4px 4px 12px rgba(50, 50, 50, 0.7); }
-    div.home div.listbox h3 {
+    div.content div.listbox h3 {
       font-size: 20px;
       padding-left: 50px;
       background-color: #95c537;
       line-height: 37px;
       font-weight: normal;
       color: #ffffff; }
-    div.home div.listbox ul {
-      margin-left: 1px; }
-      div.home div.listbox ul li {
-        clear: left;
-        list-style-type: none; }
-        div.home div.listbox ul li div.date {
-          float: left; }
-          div.home div.listbox ul li div.date span.month {
-            color: #95c537;
-            font-size: 10px;
-            text-transform: uppercase; }
-          div.home div.listbox ul li div.date span.day {
-            padding: 4px 1px;
-            text-align: center;
-            width: 35px;
-            display: inline-block;
-            background-color: #95c537;
-            color: #ffffff;
-            font-size: 24px; }
-        div.home div.listbox ul li div.title {
-          margin-left: 48px;
-          padding-top: 6px; }
-          div.home div.listbox ul li div.title span {
-            font-weight: bold;
-            font-size: 18px; }
-  div.home div.minibox {
+  div.content div.minibox {
     border-bottom: 1px solid #cccccc;
     padding-bottom: 10px;
     margin-bottom: 20px; }
-    div.home div.minibox h3 {
+    div.content div.minibox h3 {
       font-size: 20px;
       padding-left: 10px;
       background-color: #95c537;
       line-height: 37px;
       font-weight: normal;
       color: #ffffff; }
-    div.home div.minibox p {
+    div.content div.minibox p {
       font-size: 13px;
       padding-left: 12px; }
+  div.content article {
+    padding-top: 10px; }

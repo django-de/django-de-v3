@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load news_tags %}
+{% load news_tags events_tags %}
 
 {% block container %}
     <div class="row title">
@@ -29,6 +29,7 @@
         <div class="span6">
             <div class="listbox" style="top:-50px;">
                 <h3>Termine</h3>
+                {% show_events 8 %}
             </div>
             <div class="listbox" style="top:-20px">
                 <h3>News</h3>

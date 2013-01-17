@@ -1,3 +1,17 @@
+# -----------------------------------------------------------------------------
+# Compass requirements
+# -----------------------------------------------------------------------------
+# gem install compass
+# gem install susy
+
+# To convert scss files to stylesheets run:
+#   `compass watch`
+# inside the projecdt/static filder.
+
+
+# -----------------------------------------------------------------------------
+# Python requirements
+# -----------------------------------------------------------------------------
 Django==1.4.3
 Markdown==2.2.1
 South==0.7.6

@@ -1,6 +1,7 @@
-django==1.2.3
-django-staticfiles==0.3.2
-django-markup==0.3.0
-south==0.7.2
-tweepy==1.7.1
-django-pagination
+Django==1.4.3
+Markdown==2.2.1
+South==0.7.6
+distribute==0.6.27
+django-pagination==1.0.7
+pytz==2012j
+tweepy==1.12

@@ -19,3 +19,4 @@ django-pagination==1.0.7
 pytz==2012j
 tweepy==1.12
 icalendar==3.2
+requests==1.1.0

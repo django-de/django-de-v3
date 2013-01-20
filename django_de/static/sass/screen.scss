@@ -71,11 +71,13 @@ div.title {
         padding: 10px 10px;
         text-align: center;
 
-        span.version {
+        .version {
             font-size: 40px;
             font-weight: bold;
             line-height: 50px;
             font-size: bold;
+            color: #ffffff;
+            text-decoration: none;
         }
     }
 }

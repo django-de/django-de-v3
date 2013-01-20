@@ -1,4 +1,3 @@
-/* line 17, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,69 +19,56 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../.gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 4, ../sass/screen.scss */
 body {
   font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
 }
 
-/* line 8, ../sass/screen.scss */
 header.row {
   background-color: #0d342a;
   border-top: 5px solid #92c557;
 }
-/* line 12, ../sass/screen.scss */
 header.row img.logo {
   padding: 22px;
 }
-/* line 16, ../sass/screen.scss */
 header.row nav > ul {
   float: right;
   padding-right: 20px;
 }
-/* line 20, ../sass/screen.scss */
 header.row nav > ul li {
   float: left;
   border-left: 1px solid #0a2820;
@@ -90,25 +76,21 @@ header.row nav > ul li {
   list-style-type: none;
   margin: 20px 0px;
 }
-/* line 27, ../sass/screen.scss */
 header.row nav > ul li a {
   color: #ffffff;
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 33, ../sass/screen.scss */
 header.row nav > ul li a:hover {
   color: #728882;
 }
 
-/* line 41, ../sass/screen.scss */
 div.title {
   border-top: 2px solid #0a271f;
   background-color: #0d342a;
   padding-bottom: 25px;
 }
-/* line 46, ../sass/screen.scss */
 div.title p {
   color: #e5ecd9;
   font-size: 13px;
@@ -117,7 +99,6 @@ div.title p {
   padding-top: 10px;
   padding-bottom: 25px;
 }
-/* line 56, ../sass/screen.scss */
 div.title h2 {
   font-size: 29px;
   font-weight: normal;
@@ -128,7 +109,6 @@ div.title h2 {
   text-shadow: 2px 2px 2px #1b2f0b;
   color: #ffffff;
 }
-/* line 67, ../sass/screen.scss */
 div.title div.releasebox {
   color: #ffffff;
   margin: 20px 40px;
@@ -136,39 +116,34 @@ div.title div.releasebox {
   padding: 10px 10px;
   text-align: center;
 }
-/* line 74, ../sass/screen.scss */
-div.title div.releasebox span.version {
+div.title div.releasebox .version {
   font-size: 40px;
   font-weight: bold;
   line-height: 50px;
   font-size: bold;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* line 83, ../sass/screen.scss */
 div.content {
   background-color: #dfe7e5;
-  border-top: 10px solid white;
+  border-top: 10px solid #ffffff;
 }
-/* line 87, ../sass/screen.scss */
 div.content ul.list {
   margin-left: 1px;
 }
-/* line 90, ../sass/screen.scss */
 div.content ul.list li {
   clear: left;
   list-style-type: none;
 }
-/* line 94, ../sass/screen.scss */
 div.content ul.list li div.date {
   float: left;
 }
-/* line 97, ../sass/screen.scss */
 div.content ul.list li div.date span.month {
   color: #95c537;
   font-size: 10px;
   text-transform: uppercase;
 }
-/* line 103, ../sass/screen.scss */
 div.content ul.list li div.date span.day {
   padding: 4px 1px;
   text-align: center;
@@ -178,24 +153,20 @@ div.content ul.list li div.date span.day {
   color: #ffffff;
   font-size: 24px;
 }
-/* line 113, ../sass/screen.scss */
 div.content ul.list li div.item {
   margin-left: 48px;
   padding-top: 6px;
 }
-/* line 117, ../sass/screen.scss */
 div.content ul.list li div.item span {
   font-weight: bold;
   font-size: 18px;
 }
-/* line 125, ../sass/screen.scss */
 div.content div.listbox {
   position: relative;
   background-color: #ffffff;
   padding: 2px 10px;
   box-shadow: 4px 4px 12px rgba(50, 50, 50, 0.7);
 }
-/* line 131, ../sass/screen.scss */
 div.content div.listbox h3 {
   font-size: 20px;
   padding-left: 50px;
@@ -204,13 +175,11 @@ div.content div.listbox h3 {
   font-weight: normal;
   color: #ffffff;
 }
-/* line 141, ../sass/screen.scss */
 div.content div.minibox {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-/* line 146, ../sass/screen.scss */
 div.content div.minibox h3 {
   font-size: 20px;
   padding-left: 10px;
@@ -219,12 +188,10 @@ div.content div.minibox h3 {
   font-weight: normal;
   color: #ffffff;
 }
-/* line 155, ../sass/screen.scss */
 div.content div.minibox p {
   font-size: 13px;
   padding-left: 12px;
 }
-/* line 161, ../sass/screen.scss */
 div.content article {
   padding-top: 10px;
 }

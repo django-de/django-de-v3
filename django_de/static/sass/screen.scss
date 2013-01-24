@@ -5,66 +5,103 @@ body {
     font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
 }
 
-header.row {
+div.container {
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
     background-color: #0d342a;
     border-top: 5px solid #92c557;
 
-    img.logo {
-        padding: 22px;
+    &:after {
+        clear: both;
+        display: table;
+        line-height: 0;
+        content: "";
     }
 
-    nav > ul {
+    div.logo {
+        float: left;
+        padding-top: 5px;
+        padding-left: 10px;
+
+        img {
+            padding: 22px;
+        }
+    }
+
+    nav {
         float: right;
-        padding-right: 20px;
+        padding-top: 10px;
 
-        li {
-            float:left;
-            border-left: 1px solid #0a2820;
-            padding: 10px 20px;
-            list-style-type: none;
-            margin: 20px 0px;
+        ul {
+            padding-right: 20px;
 
-            a {
-                color: #ffffff;
-                font-size: 14px;
-                text-decoration: none;
-                text-transform: uppercase;
+            li {
+                float:left;
+                border-left: 1px solid #0a2820;
+                padding: 10px 20px;
+                list-style-type: none;
+                margin: 20px 0px;
 
-                &:hover {
-                    color: #728882;
+                a {
+                    color: #ffffff;
+                    font-size: 14px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        color: #728882;
+                    }
                 }
             }
         }
     }
 }
 
-div.title {
+div.home {
     border-top: 2px solid #0a271f;
     background-color: #0d342a;
     padding-bottom: 25px;
 
-    p {
-        color: #e5ecd9;
-        font-size: 13px;
-        line-height: 1.5em;
-        padding-left: 15px;
-        padding-top: 10px;
-        padding-bottom: 25px;
-
+    &:after {
+        clear: both;
+        display: table;
+        line-height: 0;
+        content: "";
     }
 
-    h2 {
-        font-size: 29px;
-        font-weight: normal;
-        line-height: 1.2em;
-        margin: 10px 0px;
-        padding: 20px 0px 0px 15px;
-        opacity: 1;
-        text-shadow: 2px 2px 2px #1b2f0b;
-        color: #ffffff;
+    div.claim {
+        width: 620px;
+        margin-left: 20px;
+        float: left;
+
+        p {
+            color: #e5ecd9;
+            font-size: 13px;
+            line-height: 1.5em;
+            padding-left: 15px;
+            padding-top: 10px;
+            padding-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 29px;
+            font-weight: normal;
+            line-height: 1.2em;
+            margin: 10px 0px;
+            padding: 20px 0px 0px 15px;
+            opacity: 1;
+            text-shadow: 2px 2px 2px #1b2f0b;
+            color: #ffffff;
+        }
     }
 
-    div.releasebox {
+    div.release {
+        float: right;
+        width: 380px;
         color: #ffffff;
         margin: 20px 40px;
         background-color: #95c537;
@@ -83,6 +120,23 @@ div.title {
 div.content {
     background-color: #dfe7e5;
     border-top: 10px solid #ffffff;
+
+    &:after {
+        clear: both;
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    div.teasers {
+        float: left;
+        width: 500px;
+    }
+
+    div.hints {
+        float: right;
+        width: 580px;
+    }
 
     ul.list {
         margin-left: 1px;
@@ -123,9 +177,12 @@ div.content {
     }
 
     div.listbox {
+        float: left;
         position: relative;
         background-color: #ffffff;
-        padding: 2px 10px;
+        padding: 10px 10px;
+        width: 540px;
+        margin-left: 20px;
         box-shadow: 4px 4px 12px rgba(50, 50, 50, 0.7);
 
         h3 {
@@ -141,7 +198,12 @@ div.content {
     div.minibox {
         border-bottom: 1px solid #cccccc;
         padding-bottom: 10px;
-        margin-bottom: 20px;
+
+        margin-right: 15px;
+        margin-top: 15px;
+        width: 270px;
+        float: right;
+        background-color: #ffffff;
 
         h3 {
             font-size: 20px;
@@ -153,8 +215,8 @@ div.content {
         }
 
         p {
-            font-size: 13px;
             padding-left: 12px;
+            padding-top: 10px;
         }
     }
 

@@ -2,8 +2,8 @@
 {% load news_tags events_tags version_tags %}
 
 {% block container %}
-    <div class="row title">
-        <div class="span8">
+    <div class="home">
+        <div class="claim">
             <h2>
                 Django ist ein Python-Web-Framework für die schnelle
                 Entwicklung von sauberen, pragmatischen Lösungen.
@@ -17,26 +17,24 @@
                 gerecht zu werden.
             </p>
         </div>
-        <div class="span4">
-            <div class="releasebox">
-                <strong>Last Release:</strong><br />
-                <span class="version"style="">{% latest_stable_version %}</span>
-            </div>
+        <div class="release">
+            <strong>Last Release:</strong><br />
+            <span class="version"style="">{% latest_stable_version %}</span>
         </div>
     </div>
 
-    <div class="row content">
-        <div class="span6">
-            <div class="listbox" style="top:-50px;">
+    <div class="content">
+        <div class="teasers">
+            <div class="listbox" style="top:-30px;">
                 <h3>Termine</h3>
                 {% show_events 8 %}
             </div>
-            <div class="listbox" style="top:-20px">
+            <div class="listbox" style="top:-10px">
                 <h3>News</h3>
                 {% show_news 5 %}
             </div>
         </div>
-        <div class="span3" style="padding-top:10px">
+        <div class="hints">
             <div class="minibox">
                 <h3>Open Source</h3>
                 <p>
@@ -55,8 +53,6 @@
                     laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
             </div>
-        </div>
-        <div class="span3" style="padding-top:10px;margin-left:10px">
             <div class="minibox">
                 <h3>Dokumentation</h3>
                 <p>

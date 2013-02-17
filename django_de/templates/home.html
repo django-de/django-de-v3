@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load news_tags events_tags version_tags %}
-
+{% block bodycls %}home{% endblock %}
 {% block container %}
     <div class="home">
         <div class="claim">
-            <h2>
+            <h2><span>
                 Django ist ein Python-Web-Framework für die schnelle
                 Entwicklung von sauberen, pragmatischen Lösungen.
-            </h2>
+            </span></h2>
 
             <p>
                 Ursprünglich für Nachrichtenplattformen entwickelt, ist
@@ -18,7 +18,7 @@
             </p>
         </div>
         <div class="release">
-            <strong>Last Release:</strong><br />
+            <strong>Last Release:</strong>
             <a href="https://www.djangoproject.com/download/" class="version" rel="external">{% latest_stable_version %}</a>
         </div>
     </div>
@@ -36,7 +36,7 @@
         </div>
         <div class="hints">
             <div class="minibox">
-                <h3>Open Source</h3>
+                <h3><i class="heart"></i>Open Source</h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -54,7 +54,7 @@
                 </p>
             </div>
             <div class="minibox">
-                <h3>Dokumentation</h3>
+                <h3><i class="idea"></i>Dokumentation</h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

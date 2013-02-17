@@ -1,19 +1,16 @@
 {% extends "base.html" %}
-
+{% block bodycls %}article{% endblock %}
 {% block container %}
-    <div class="row title">
-        <div class="span12">
-            <h2>{% block headline %}{% endblock %}</h2>
-        </div>
-    </div>
-
-    <div class="row content">
-        <article class="span9">
+<article>
+    <h1><span>{% block headline %}{% endblock %}</span></h1>
+ 
+    <div class="row content" id="main">
+        <div id="content">
             {% block article %}{% endblock %}
-        </article>
-        <aside class="span3" style="margin-left:10px">
+        </div>
+        <aside>
             {% block aside %}{% endblock %}
         </aside>
     </div>
-</div>
+</article>
 {% endblock %}

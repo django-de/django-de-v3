@@ -12,7 +12,7 @@
       <link href="{{ STATIC_URL }}css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
   </head>
-  <body>
+  <body class="{% block bodycls %}{% endblock %}">
     <div class="container">
       <header>
         <div class="logo">
@@ -31,6 +31,9 @@
       </header>
       {% block container %}
       {% endblock %}
+      <footer>
+          
+      </footer>
     </div>
   </body>
 </html>

@@ -1,19 +1,61 @@
 @import "compass/reset";
+@import "susy";
+
+$total-columns: 16;
+$column-width: 50px;
+$gutter-width: 10px;
+$grid-padding: 8px;
+
+$light-green: #e9ffb3;
+$dark-green: #05372b;
+$green: #96ca0d;
+
+$grey: #dfe7e5;
 
 
 body {
-    font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #404644;
+    line-height: 130%;
+}
+
+i {
+    background-image: url(../img/icons.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 5px;
+}
+i.heart {
+    background-position: -17px 2px;
+    width: 20px;
+}
+i.idea {
+    background-position: 2px 0px;
+    width: 20px;
+}
+
+a {
+    color: $dark-green;
 }
 
 div.container {
-    width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
+    //width: 1170px;
+    margin: auto;
+    width: 968px;
+}
+
+header, .container > .home, .container > .content {
+    margin: auto;
+    @include container;
 }
 
 header {
-    background-color: #0d342a;
+    background-color: $dark-green;
+    font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
     border-top: 5px solid #92c557;
+    padding-bottom: 10px;
+    background: url(../img/navbg-btn.png) bottom center no-repeat, url(../img/header-pat.png) top center repeat-y, $dark-green;
 
     &:after {
         clear: both;
@@ -60,11 +102,17 @@ header {
         }
     }
 }
-
+body.home {
+    .content {
+        //background: url(../img/homebg.png) 50% -125px no-repeat #dfe7e5;    
+        background: url(../img/homebg-b.png) 50% 0px no-repeat #dfe7e5;    
+    }
+}
 div.home {
-    border-top: 2px solid #0a271f;
+    //border-top: 2px solid #0a271f;
     background-color: #0d342a;
-    padding-bottom: 25px;
+    background: url(../img/homebg-t.png) 50% 100% no-repeat, url(../img/header-pat.png) top left repeat-y;
+    position: relative;
 
     &:after {
         clear: both;
@@ -74,46 +122,69 @@ div.home {
     }
 
     div.claim {
-        width: 620px;
-        margin-left: 20px;
-        float: left;
+        @include span-columns(12);
+        text-align: center;
+        padding-bottom: 40px;
 
         p {
-            color: #e5ecd9;
+            color: $grey;//#b5d0c9;
+            border-top: 1px dotted $grey; //#b5d0c9;
+            width: 395px;
             font-size: 13px;
             line-height: 1.5em;
-            padding-left: 15px;
+            margin: 10px auto 0px auto;
             padding-top: 10px;
-            padding-bottom: 25px;
+            font-style: italic;
         }
 
         h2 {
             font-size: 29px;
             font-weight: normal;
-            line-height: 1.2em;
             margin: 10px 0px;
             padding: 20px 0px 0px 15px;
             opacity: 1;
             text-shadow: 2px 2px 2px #1b2f0b;
             color: #ffffff;
+            span {
+                background: #011711;
+                line-height: 38px;
+                &:before, &:after {
+                    font-size: 140%;
+                    font-weight: bold;
+                    background: transparent;
+                    position: relative;
+                    top: 3px;
+                }
+                &:before {
+                    content: "“";
+                }
+                &:after {
+                    content: '”';
+                }
+            }
         }
     }
 
     div.release {
-        float: right;
-        width: 380px;
-        color: #ffffff;
-        margin: 20px 40px;
-        background-color: #95c537;
-        padding: 10px 10px;
+        @include span-columns(4 omega);
+        color: $green;
         text-align: center;
+        position: absolute;
+        bottom: 24px;
+        right: 8px;
+        padding: 20px 0;
+        text-shadow: 1px 1px 1px darken($green, 20);
+        strong {
+            text-decoration: underline;
+            display: block;
+        }
 
         .version {
             font-size: 40px;
             font-weight: bold;
-            line-height: 50px;
+            line-height: 44px;
             font-size: bold;
-            color: #ffffff;
+            color: $green;
             text-decoration: none;
         }
     }
@@ -121,7 +192,8 @@ div.home {
 
 div.content {
     background-color: #dfe7e5;
-    border-top: 10px solid #ffffff;
+    font-size: 15px;
+    line-height: 140%;
 
     &:after {
         clear: both;
@@ -131,13 +203,15 @@ div.content {
     }
 
     div.teasers {
-        float: left;
-        width: 500px;
+        @include span-columns(8);
+        ul {
+            margin: 15px 0 15px 1px;
+        }
     }
 
     div.hints {
-        float: right;
-        width: 580px;
+        @include span-columns(8 omega);
+        margin-top: 100px;
     }
 
     ul.list {
@@ -154,6 +228,7 @@ div.content {
                     color: #95c537;
                     font-size: 10px;
                     text-transform: uppercase;
+                    display: block;
                 }
 
                 span.day {
@@ -168,24 +243,25 @@ div.content {
             }
             div.item {
                 margin-left: 48px;
-                padding-top: 6px;
+                padding-top: 17px;
 
                 span {
                     font-weight: bold;
                     font-size: 18px;
+                }
+                small {
+                    font-size: 12px;
                 }
             }
         }
     }
 
     div.listbox {
-        float: left;
-        position: relative;
         background-color: #ffffff;
-        padding: 10px 10px;
-        width: 540px;
-        margin-left: 20px;
-        box-shadow: 4px 4px 12px rgba(50, 50, 50, 0.7);
+        padding: 10px;
+        width: 406px;
+        margin: 0 0 20px 30px;
+        //box-shadow: 4px 4px 12px rgba(50, 50, 50, 0.7);
 
         h3 {
             font-size: 20px;
@@ -198,15 +274,13 @@ div.content {
     }
 
     div.minibox {
-        border-bottom: 1px solid #cccccc;
-        padding-bottom: 10px;
-
-        margin-right: 15px;
-        margin-top: 15px;
-        width: 270px;
-        float: right;
-        background-color: #ffffff;
-
+        //border-bottom: 1px solid #cccccc;
+        
+        padding-bottom: 30px;
+        padding-top: 15px;
+        margin-bottom: 0px;
+        
+        
         h3 {
             font-size: 20px;
             padding-left: 10px;
@@ -219,10 +293,78 @@ div.content {
         p {
             padding-left: 12px;
             padding-top: 10px;
+            font-size: 13px;
+        }
+    }
+
+    .hints .minibox {
+        @include span-columns(4, 8);
+        background: url(../img/minibox-bg.png) bottom center no-repeat;
+        &:nth-child(3), &:nth-child(4) {
+            background: none;
+            padding-bottom: 15px;
+        }
+        &:nth-child(even) {
+            @include omega;
+        }
+        i {
+            position: relative;
+            top: 4px;
         }
     }
 
     article {
         padding-top:10px;
     }
+}
+
+aside .minibox {
+    padding: 10px;
+    background: #FFF;
+}
+
+ul.dates {
+    list-style: disc;
+    padding: 15px 0 15px 25px;
+}
+
+h1 {
+    font-size: 32px;
+    padding: 40px 20px;
+    background: url(../img/header-pat.png) top left repeat;
+    color: #FFF;
+    margin: 0 1px 15px 1px;
+    border-bottom: 25px solid $green;
+    text-align: center;
+    span {
+        background: #011711;
+        line-height: 38px;
+        &:before, &:after {
+            content: " ";
+        }
+    }
+}
+body.listing, article {
+    #main {
+        padding: 15px 8px;
+    }
+    #content {
+        @include span-columns(10);
+    }
+    aside {
+        @include span-columns(5 omega);
+    }
+}
+
+body.article #content {
+    padding: 10px 15px;
+    p, ul, table, pre, blockquote {
+        margin-bottom: 1em;
+    }
+}
+
+footer {
+    background: url(../img/footer.png) top center no-repeat;
+    height: 116px;
+    margin-top: 20px;
 }

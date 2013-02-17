@@ -1,17 +1,13 @@
 {% extends "base.html" %}
-
+{% block bodycls %}listing{% endblock %}
 {% block container %}
-    <div class="row title">
-        <div class="span12">
-            <h2>{% block headline %}{% endblock %}</h2>
-        </div>
-    </div>
+    <h1><span>{% block headline %}{% endblock %}</span></h1>
 
-    <div class="row content">
-        <div class="span9">
+    <div id="main" class="content">
+        <div id="content">
             {% block content %}{% endblock %}
         </div>
-        <aside class="span3" style="margin-left:10px">
+        <aside>
             {% block aside %}{% endblock %}
         </aside>
     </div>

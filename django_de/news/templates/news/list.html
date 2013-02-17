@@ -10,7 +10,15 @@
 
 {% block aside %}
     <div class="minibox">
-        <h3>Archive</h3>
-        <p class="dates">Monate, Jahre</p>
+        <h3>Archiv</h3>
+        {% if months %}
+        <ul class="dates">
+            {% for month in months %}
+                {% with m=month|date:"m" y=month|date:"Y" %}
+                    <li><a href="{% url news_list year=y month=m %}">{{ month|date:"F Y" }}</a></li>
+                {% endwith %}
+            {% endfor %}
+        </ul>
+        {% endif %}
     </div>
 {% endblock %}

@@ -24,6 +24,7 @@ def news_list(request, year=None, month=None, day=None):
 
     return render(request, 'news/list.html', {
         'object_list': query,
+        'months': models.NewsItem.objects.dates('pub_date', 'month', order='DESC'),
     })
 
 

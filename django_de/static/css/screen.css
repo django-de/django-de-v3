@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -55,18 +56,60 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-  font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #404644;
+  line-height: 130%;
+}
+
+i {
+  background-image: url(../img/icons.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 24px;
+  margin-right: 5px;
+}
+
+i.heart {
+  background-position: -17px 2px;
+  width: 20px;
+}
+
+i.idea {
+  background-position: 2px 0px;
+  width: 20px;
+}
+
+a {
+  color: #05372b;
 }
 
 div.container {
-  width: 1170px;
+  margin: auto;
+  width: 968px;
+}
+
+header, .container > .home, .container > .content {
+  margin: auto;
+  *zoom: 1;
+  max-width: 950px;
+  _width: 950px;
+  padding-left: 8px;
+  padding-right: 8px;
   margin-left: auto;
   margin-right: auto;
 }
+header:after, .container > .home:after, .container > .content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 header {
-  background-color: #0d342a;
+  background-color: #05372b;
+  font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
   border-top: 5px solid #92c557;
+  padding-bottom: 10px;
+  background: url(../img/navbg-btn.png) bottom center no-repeat, url(../img/header-pat.png) top center repeat-y, #05372b;
 }
 header:after {
   clear: both;
@@ -106,10 +149,14 @@ header nav ul li a:hover {
   color: #728882;
 }
 
+body.home .content {
+  background: url(../img/homebg-b.png) 50% 0px no-repeat #dfe7e5;
+}
+
 div.home {
-  border-top: 2px solid #0a271f;
   background-color: #0d342a;
-  padding-bottom: 25px;
+  background: url(../img/homebg-t.png) 50% 100% no-repeat, url(../img/header-pat.png) top left repeat-y;
+  position: relative;
 }
 div.home:after {
   clear: both;
@@ -118,47 +165,80 @@ div.home:after {
   content: "";
 }
 div.home div.claim {
-  width: 620px;
-  margin-left: 20px;
+  width: 74.73684%;
   float: left;
+  margin-right: 1.05263%;
+  display: inline;
+  text-align: center;
+  padding-bottom: 40px;
 }
 div.home div.claim p {
-  color: #e5ecd9;
+  color: #dfe7e5;
+  border-top: 1px dotted #dfe7e5;
+  width: 395px;
   font-size: 13px;
   line-height: 1.5em;
-  padding-left: 15px;
+  margin: 10px auto 0px auto;
   padding-top: 10px;
-  padding-bottom: 25px;
+  font-style: italic;
 }
 div.home div.claim h2 {
   font-size: 29px;
   font-weight: normal;
-  line-height: 1.2em;
   margin: 10px 0px;
   padding: 20px 0px 0px 15px;
   opacity: 1;
   text-shadow: 2px 2px 2px #1b2f0b;
   color: #ffffff;
 }
-div.home div.release {
-  float: right;
-  width: 380px;
-  color: #ffffff;
-  margin: 20px 40px;
-  background-color: #95c537;
-  padding: 10px 10px;
-  text-align: center;
+div.home div.claim h2 span {
+  background: #011711;
+  line-height: 38px;
 }
-div.home div.release span.version {
+div.home div.claim h2 span:before, div.home div.claim h2 span:after {
+  font-size: 140%;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  top: 3px;
+}
+div.home div.claim h2 span:before {
+  content: "“";
+}
+div.home div.claim h2 span:after {
+  content: '”';
+}
+div.home div.release {
+  width: 24.21053%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -10px;
+  display: inline;
+  color: #96ca0d;
+  text-align: center;
+  position: absolute;
+  bottom: 24px;
+  right: 8px;
+  padding: 20px 0;
+  text-shadow: 1px 1px 1px #4f6a07;
+}
+div.home div.release strong {
+  text-decoration: underline;
+  display: block;
+}
+div.home div.release .version {
   font-size: 40px;
   font-weight: bold;
-  line-height: 50px;
+  line-height: 44px;
   font-size: bold;
+  color: #96ca0d;
+  text-decoration: none;
 }
 
 div.content {
   background-color: #dfe7e5;
-  border-top: 10px solid white;
+  font-size: 15px;
+  line-height: 140%;
 }
 div.content:after {
   clear: both;
@@ -167,12 +247,21 @@ div.content:after {
   content: "";
 }
 div.content div.teasers {
+  width: 49.47368%;
   float: left;
-  width: 500px;
+  margin-right: 1.05263%;
+  display: inline;
+}
+div.content div.teasers ul {
+  margin: 15px 0 15px 1px;
 }
 div.content div.hints {
+  width: 49.47368%;
   float: right;
-  width: 580px;
+  margin-right: 0;
+  #margin-left: -10px;
+  display: inline;
+  margin-top: 100px;
 }
 div.content ul.list {
   margin-left: 1px;
@@ -188,6 +277,7 @@ div.content ul.list li div.date span.month {
   color: #95c537;
   font-size: 10px;
   text-transform: uppercase;
+  display: block;
 }
 div.content ul.list li div.date span.day {
   padding: 4px 1px;
@@ -200,20 +290,20 @@ div.content ul.list li div.date span.day {
 }
 div.content ul.list li div.item {
   margin-left: 48px;
-  padding-top: 6px;
+  padding-top: 17px;
 }
 div.content ul.list li div.item span {
   font-weight: bold;
   font-size: 18px;
 }
+div.content ul.list li div.item small {
+  font-size: 12px;
+}
 div.content div.listbox {
-  float: left;
-  position: relative;
   background-color: #ffffff;
-  padding: 10px 10px;
-  width: 540px;
-  margin-left: 20px;
-  box-shadow: 4px 4px 12px rgba(50, 50, 50, 0.7);
+  padding: 10px;
+  width: 406px;
+  margin: 0 0 20px 30px;
 }
 div.content div.listbox h3 {
   font-size: 20px;
@@ -224,13 +314,9 @@ div.content div.listbox h3 {
   color: #ffffff;
 }
 div.content div.minibox {
-  border-bottom: 1px solid #cccccc;
-  padding-bottom: 10px;
-  margin-right: 15px;
-  margin-top: 15px;
-  width: 270px;
-  float: right;
-  background-color: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  margin-bottom: 0px;
 }
 div.content div.minibox h3 {
   font-size: 20px;
@@ -243,7 +329,86 @@ div.content div.minibox h3 {
 div.content div.minibox p {
   padding-left: 12px;
   padding-top: 10px;
+  font-size: 13px;
+}
+div.content .hints .minibox {
+  width: 48.93617%;
+  float: left;
+  margin-right: 2.12766%;
+  display: inline;
+  background: url(../img/minibox-bg.png) bottom center no-repeat;
+}
+div.content .hints .minibox:nth-child(3), div.content .hints .minibox:nth-child(4) {
+  background: none;
+  padding-bottom: 15px;
+}
+div.content .hints .minibox:nth-child(even) {
+  float: right;
+  margin-right: 0;
+  #margin-left: -10px;
+  display: inline;
+}
+div.content .hints .minibox i {
+  position: relative;
+  top: 4px;
 }
 div.content article {
   padding-top: 10px;
+}
+
+aside .minibox {
+  padding: 10px;
+  background: #FFF;
+}
+
+ul.dates {
+  list-style: disc;
+  padding: 15px 0 15px 25px;
+}
+
+h1 {
+  font-size: 32px;
+  padding: 40px 20px;
+  background: url(../img/header-pat.png) top left repeat;
+  color: #FFF;
+  margin: 0 1px 15px 1px;
+  border-bottom: 25px solid #96ca0d;
+  text-align: center;
+}
+h1 span {
+  background: #011711;
+  line-height: 38px;
+}
+h1 span:before, h1 span:after {
+  content: " ";
+}
+
+body.listing #main, article #main {
+  padding: 15px 8px;
+}
+body.listing #content, article #content {
+  width: 62.10526%;
+  float: left;
+  margin-right: 1.05263%;
+  display: inline;
+}
+body.listing aside, article aside {
+  width: 30.52632%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -10px;
+  display: inline;
+}
+
+body.article #content {
+  padding: 10px 15px;
+}
+body.article #content p, body.article #content ul, body.article #content table, body.article #content pre, body.article #content blockquote {
+  margin-bottom: 1em;
+}
+
+footer {
+  background: url(../img/footer.png) top center no-repeat;
+  height: 116px;
+  margin-top: 20px;
 }

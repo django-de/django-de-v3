@@ -1,5 +1,6 @@
 import os
 import sys
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 PYTHON_BIN = os.path.dirname(sys.executable)
 if not os.path.exists(os.path.join(PYTHON_BIN, 'activate_this.py')):
@@ -60,6 +61,10 @@ MIDDLEWARE_CLASSES = (
     'pagination.middleware.PaginationMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.core.context_processors.request',
 )
 
 ROOT_URLCONF = 'django_de.urls'

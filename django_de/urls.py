@@ -18,4 +18,7 @@ urlpatterns = patterns('',
     (r'^events/', include('django_de.events.urls')),
 
     (r'^$', TemplateView.as_view(template_name='home.html')),
+    (r'^impressum/$', TemplateView.as_view(template_name='imprint.html')),
+    (r'^ueber-django/$', TemplateView.as_view(template_name='about.html')),
+    (r'^verein/$', TemplateView.as_view(template_name='association.html')),
 )

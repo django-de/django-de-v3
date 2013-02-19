@@ -1,0 +1,125 @@
+{% extends "article_base.html" %}
+{% load markup %}
+
+{% block title %}Über Django | django-de.org{% endblock %}
+{% block headline %}Über Django{% endblock %}
+
+{% block bodycls %}about{% endblock %}
+
+{% block article %}
+    <h2>Was ist Django?</h2>
+    <p>
+        Django ist ein in Python geschriebenes Framework, das die schnelle Entwicklung
+        von Web-Applikationen ermöglicht. Dabei wird Wert auf sauberen Code und die
+        Wiederverwendbarkeit einzelner Komponenten gelegt.<br />
+        <br />
+        Der Object-Relational-Mapper (ORM) ermöglicht einen einfachen und schnellen
+        Zugriff auf die Datenbank. Dabei werden verschiedene Datenbanken unterstützt.
+        Django bietet außerdem umfangreiche Unterstützung für mehrsprachige Anwendungen.<br />
+        <br />
+        Django wird als Open Source Software unter einer BSD-Lizenz verteilt.<br />
+    </p>
+    <p>
+        <strong>Django Foundation</strong><br />
+        Die Entwicklung von Django wird durch die in den USA ansässige Django Foundation
+        beobachtet und gesteuert. Dadurch ist sowohl die Weiterentwicklung der Software
+        als auch der Schutz vor einem Missbrauch des Namens sichergestellt.
+    </p>
+
+    <h2>Das DRY-Prinzip</h2>
+    <p>
+        Django ist nach dem DRY-Prinzip (Don’t Repeat Yourself) programmiert und organisiert.
+        Es besagt, dass jede Wissenseinheit nur eine eindeutige und schlüssig positionierte
+        Repräsentation im Code haben darf und Redundanz vermieden wird. Nach diesen Prinzip
+        sollten auch die mit Django entwickelten Projekte erstellt werden.
+    </p>
+
+    <h2>MTV - ein MVC-Muster</h2>
+    <p>
+        Django trennt – wie durch das MVC-Muster vorgegeben – Datenrepäsentation (Model),
+        Darstellung (View) und Logik (Controller) voneinander.
+    </p>
+
+    <h2>Template-Engine</h2>
+    <p>
+        Die Templates werden in einer eigenen Templatesprache geschrieben. Sie bringt bereits
+        viele nützliche Helfer zum Erstellen der Ausgabe mit. Die umfangreiche Tag-Bibliothek
+        kann leicht um eigene Funktionen erweitert werden.
+    </p>
+
+    <code>&lt;p&gt;Dear &#123;&#123; person_name &#125;&#125;,&lt;/p&gt;
+
+&lt;p&gt;Here are the items you've ordered:&lt;/p&gt;
+&lt;ul&gt;
+    &#123;% for item in item_list %&#125;
+        &lt;li&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;
+    &#123;% endfor %&#125;
+&lt;/ul&gt;
+
+&#123;% if ordered_warranty %&#125;
+    &lt;p&gt;Your warranty information will be included in the packaging.&lt;/p&gt;
+&#123;% endif %&#125;</code>
+
+    <h2>Eingebautes Admintool</h2>
+    <p>
+        Das automatisch erzeugte Admin-Interface hilft bei der Erstellung und Bearbeitung der
+        Daten. Es kann bei Bedarf leicht angepasst und erweitert werden.<br />
+        <br />
+        <img src="{{ STATIC_URL }}img/admin-list-display.gif" alt="Admin (List Display)" />
+    </p>
+
+    <h2>Object-Relational-Mapper</h2>
+    <p>
+        Der Object-Relational-Mapper (ORM) ermöglicht einen einfachen und schnellen Zugriff
+        auf die Datenbank. Dabei werden verschiedene Datenbanken unterstüzt.
+    </p>
+
+    <code>from django.db import models
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)</code>
+
+    <h2>Elegantes URL Design</h2>
+    <p>
+        Jeder URL kann durch den Entwickler nahezu beliebig selbst bestimmt werden.
+        Der URL wird beim Aufruf durch einen regulären Ausdruck mit dem entsprechenden
+        Inhalt verknüpft.
+    </p>
+
+    <code>urlpatterns = patterns('',
+    (r'^polls/$', 'mysite.polls.views.index'),
+    (r'^polls/(?P<poll_id>\d+)/results/$', 'mysite.polls.views.results'),
+    (r'^polls/(?P<poll_id>\d+)/$', 'mysite.polls.views.detail'),
+    (r'^polls/(?P<poll_id>\d+)/vote/$', 'mysite.polls.views.vote'),
+    (r'^admin/', include(admin. site. urls))
+)</code>
+
+    <h2>Open Source</h2>
+    <p>
+        Django ist Open Source (BSD-Lizenz). Man kann als Entwickler also einerseits
+        in den Quellcode schauen, um die Funktionalität zu verstehen, andererseits
+        auch an der Weiterentwicklung von Django teilnehmen. Die Benutzung von Django ist kostenlos.
+    </p>
+
+    <h2>Dokumentation</h2>
+    <p>
+        Django besitzt eine hervorragende (englische) Dokumentation mit vielen nützlichen
+        Beispielen. Eine deutsche Version ist in Arbeit.
+    </p>
+
+    <h2>Freundliche Community</h2>
+    <p>
+        Sollten einmal Probleme auftreten, bei denen auch die Dokumentation nicht mehr
+        weiterhelfen kann, kann man sich über die Mailingliste oder den IRC-Channel
+        Rat von der Django-Community holen.
+    </p>
+{% endblock %}
+
+{% block aside %}
+    <h2>Mehr über Django erfahren!</h2>
+    <p>
+        ... Links ...
+    </p>
+{% endblock %}
+

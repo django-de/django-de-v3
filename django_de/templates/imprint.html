@@ -1,0 +1,40 @@
+{% extends "article_base.html" %}
+{% load markup %}
+
+{% block title %}Impressum | django-de.org{% endblock %}
+{% block headline %}Impressum{% endblock %}
+
+{% block bodycls %}imprint{% endblock %}
+
+{% block article %}
+    <h2>Herausgeber und Verantwortlicher</h2>
+    <p>
+        <strong>Deutscher Django-Verein e. V.</strong><br />
+        Erich-Zeigner-Allee 52<br />
+        04229 Leipzig<br />
+        Deutschland<br />
+        <br />
+        Der Verein wird vertreten durch den Vorstand Markus Zapke-Gründemann, Martin Mahner und Jannis Leidel.<br />
+        <br />
+        Vereinsregister: Amtsgericht Leipzig<br />
+        Registernummer: VR 4814<br />
+        Umsatzsteuer-Identifikationsnummer: DE269932358<br />
+    </p>
+    <h2>Bankverbindung</h2>
+    <p>
+        Deutscher Django-Verein e. V.<br />
+        Konto-Nummer: 2722208<br />
+        Bankleitzahl: 505 30 000  (Cronbank AG Dreieich)<br />
+    </p>
+{% endblock %}
+
+{% block aside %}
+    <h2>Kontaktmöglichkeiten</h2>
+    <p>
+        E-Mail: kontakt@django-de.org<br />
+        Fax: +49 3212 1007439<br />
+        <br />
+        Fon: +49 341 39 299 290<br />
+        <em>(Mo. - Fr. 16:00 Uhr bis 18:00 Uhr)</em><br />
+    </p>
+{% endblock %}

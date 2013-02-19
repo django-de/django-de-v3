@@ -339,6 +339,7 @@ h1 {
     span {
         background: #011711;
         line-height: 38px;
+        padding: 0px 4px;
         &:before, &:after {
             content: " ";
         }
@@ -367,4 +368,54 @@ footer {
     background: url(../img/footer.png) top center no-repeat;
     height: 116px;
     margin-top: 20px;
+}
+
+div.pagination {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+
+    span, a {
+        padding: 2px 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        display: inline-block;
+        background-color: #95c537;
+        color: #ffffff;
+        font-size: 12px;
+
+        &.disabled {
+            display: none;
+        }
+    }
+}
+body.imprint, body.about, body.association {
+    h2 {
+        font-size: 16px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        background-color: #95c537;
+        line-height: 27px;
+        font-weight: normal;
+        color: #ffffff;
+    }
+    p {
+        padding-bottom: 20px;
+    }
+    em {
+        font-style: italic;
+        font-size: 11px;
+    }
+    strong {
+        font-weight: bold;
+    }
+}
+
+code {
+    display: block;
+    white-space: pre-wrap;
+    font-family: Monospace;
+    font-size: 12px;
+    margin-bottom: 10px;
 }

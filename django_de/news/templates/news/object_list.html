@@ -1,4 +1,6 @@
+{% load pagination_tags %}
 <ul class="list">
+    {% autopaginate object_list %}
     {% for object in object_list %}
     <li>
         <div class="date">
@@ -19,3 +21,5 @@
     </li>
     {% endfor %}
 </ul>
+
+{% paginate %}

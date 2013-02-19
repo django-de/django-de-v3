@@ -1,7 +1,6 @@
 from django.db.models.query import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.template import RequestContext
 
 from . import models
 

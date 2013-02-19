@@ -80,7 +80,7 @@ class Person(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)</code>
 
-    <h2>Elegantes URL Design</h2>
+    <h2>Elegantes URL-Design</h2>
     <p>
         Jeder URL kann durch den Entwickler nahezu beliebig selbst bestimmt werden.
         Der URL wird beim Aufruf durch einen regulären Ausdruck mit dem entsprechenden
@@ -117,9 +117,13 @@ class Person(models.Model):
 {% endblock %}
 
 {% block aside %}
-    <h2>Mehr über Django erfahren!</h2>
-    <p>
-        ... Links ...
-    </p>
+	<div class="minibox">
+	    <h2>Mehr über Django erfahren!</h2>
+	    <ul>
+			<li><a href="https://www.djangoproject.com/" rel="external">Offizielle Projektwebsite</a></li>
+			<li><a href="https://www.djangoproject.com/foundation/" rel="external">Django Foundation</a></li>
+			<li><a href="https://docs.djangoproject.com/" rel="external">Dokumentation (englisch)</a></li>
+		</ul>
+	</div>
 {% endblock %}
 

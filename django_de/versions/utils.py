@@ -29,6 +29,8 @@ def get_version_data(force=False):
     api_url = getattr(settings, 'VERSIONS_API_URL',
         'https://api.github.com/repos/django/django/git/refs/tags')
     cache_duration = getattr(settings, 'VERSIONS_CACHE_TIMEOUT', 3600)
+    cache_throttle_duration = getattr(settings,
+        'VERSIONS_CACHE_THROTTLE_TIMEOUT', 600)
 
     if not force:
         info = cache.get(cache_key)
@@ -42,7 +44,13 @@ def get_version_data(force=False):
     except:
         LOG.exception("Failed to fetch versinfo data")
         return None
-
+    
+    if not isinstance(data, list):
+        # We have probably run into a rate limit and will therefor store
+        # a dummy value to prevent re-fetching for at least 10 minutes
+        info = ('-', '-')
+        cache.set(cache_key, info, 600)
+        return info
     for tag in data:
         tag_name = tag['ref'].split('/')[-1]
         if is_prerelease(tag_name):
@@ -50,5 +58,5 @@ def get_version_data(force=False):
         else:
             latest_stable = tag_name
     info = (latest_stable, latest_pre)
-    cache.set(cache_key, info, cache_duration)
+    cache.set(cache_key, info, cache_throttle_duration)
     return info

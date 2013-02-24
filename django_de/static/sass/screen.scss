@@ -12,6 +12,8 @@ $green: #96ca0d;
 
 $grey: #dfe7e5;
 
+@import "fonts";
+
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -19,7 +21,7 @@ body {
     line-height: 130%;
 }
 
-i {
+/*i {
     background-image: url(../img/icons.png);
     background-repeat: no-repeat;
     display: inline-block;
@@ -33,7 +35,16 @@ i.heart {
 i.idea {
     background-position: 2px 0px;
     width: 20px;
+}*/
+i {
+    margin-right: 7px;
 }
+.news > i {@extend .icon-newspaper; }
+.events > i {@extend .icon-calendar;}
+#info-opensource i {@extend .icon-heart;}
+#info-templateengine i {@extend .icon-copy;}
+#info-documentation i {@extend .icon-book;}
+#info-community i {@extend .icon-bubbles;}
 
 a {
     color: $dark-green;
@@ -265,11 +276,14 @@ div.content {
 
         h3 {
             font-size: 20px;
-            padding-left: 50px;
+            padding-left: 14px;
             background-color: #95c537;
             line-height: 37px;
             font-weight: normal;
             color: #ffffff;
+            i {
+                margin-right: 14px;
+            }
         }
     }
 
@@ -300,6 +314,9 @@ div.content {
     .hints .minibox {
         @include span-columns(4, 8);
         background: url(../img/minibox-bg.png) bottom center no-repeat;
+        h3 {
+            font-size: 17px;
+        }
         &:nth-child(3), &:nth-child(4) {
             background: none;
             padding-bottom: 15px;
@@ -307,9 +324,8 @@ div.content {
         &:nth-child(even) {
             @include omega;
         }
-        i {
-            position: relative;
-            top: 4px;
+        &:nth-child(odd) {
+            clear: right;
         }
     }
 

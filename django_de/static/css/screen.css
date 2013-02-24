@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,28 +55,94 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-bubbles:before, #info-community i:before, .icon-book:before, #info-documentation i:before, .icon-heart:before, #info-opensource i:before, .icon-copy:before, #info-templateengine i:before, .icon-calendar:before, .events > i:before, .icon-newspaper:before, .news > i:before, .icon-info:before, .icon-home:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-bubbles:before, #info-community i:before {
+  content: "\e000";
+}
+
+.icon-book:before, #info-documentation i:before {
+  content: "\e001";
+}
+
+.icon-heart:before, #info-opensource i:before {
+  content: "\e002";
+}
+
+.icon-copy:before, #info-templateengine i:before {
+  content: "\e004";
+}
+
+.icon-calendar:before, .events > i:before {
+  content: "\e003";
+}
+
+.icon-newspaper:before, .news > i:before {
+  content: "\e005";
+}
+
+.icon-info:before {
+  content: "\e006";
+}
+
+.icon-home:before {
+  content: "\e007";
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #404644;
   line-height: 130%;
 }
 
-i {
-  background-image: url(../img/icons.png);
-  background-repeat: no-repeat;
-  display: inline-block;
-  height: 24px;
-  margin-right: 5px;
+/*i {
+    background-image: url(../img/icons.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 5px;
 }
-
 i.heart {
-  background-position: -17px 2px;
-  width: 20px;
+    background-position: -17px 2px;
+    width: 20px;
 }
-
 i.idea {
-  background-position: 2px 0px;
-  width: 20px;
+    background-position: 2px 0px;
+    width: 20px;
+}*/
+i {
+  margin-right: 7px;
 }
 
 a {
@@ -306,11 +373,14 @@ div.content div.listbox {
 }
 div.content div.listbox h3 {
   font-size: 20px;
-  padding-left: 50px;
+  padding-left: 14px;
   background-color: #95c537;
   line-height: 37px;
   font-weight: normal;
   color: #ffffff;
+}
+div.content div.listbox h3 i {
+  margin-right: 14px;
 }
 div.content div.minibox {
   padding-bottom: 30px;
@@ -337,6 +407,9 @@ div.content .hints .minibox {
   display: inline;
   background: url(../img/minibox-bg.png) bottom center no-repeat;
 }
+div.content .hints .minibox h3 {
+  font-size: 17px;
+}
 div.content .hints .minibox:nth-child(3), div.content .hints .minibox:nth-child(4) {
   background: none;
   padding-bottom: 15px;
@@ -347,9 +420,8 @@ div.content .hints .minibox:nth-child(even) {
   #margin-left: -10px;
   display: inline;
 }
-div.content .hints .minibox i {
-  position: relative;
-  top: 4px;
+div.content .hints .minibox:nth-child(odd) {
+  clear: right;
 }
 div.content article {
   padding-top: 10px;
@@ -414,7 +486,7 @@ footer {
 }
 
 div.pagination {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin-top: 10px;
   padding-top: 10px;
 }

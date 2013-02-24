@@ -26,17 +26,17 @@
     <div class="content">
         <div class="teasers">
             <div class="listbox" style="top:-30px;">
-                <h3>Termine</h3>
+                <h3 class="events"><i></i>Termine</h3>
                 {% show_events 8 %}
             </div>
             <div class="listbox" style="top:-10px">
-                <h3>News</h3>
+                <h3 class="news"><i></i>News</h3>
                 {% show_news 5 %}
             </div>
         </div>
         <div class="hints">
-            <div class="minibox">
-                <h3><i class="heart"></i>Open Source</h3>
+            <div class="minibox" id="info-opensource">
+                <h3><i></i>Open Source</h3>
                 <p>
                     Django ist Open Source (BSD-Lizenz). Man kann als Entwickler
                     also einerseits in den Quellcode schauen, um die Funktionalität
@@ -44,8 +44,8 @@
                     Django teilnehmen. Die Benutzung von Django ist kostenlos.
                 </p>
             </div>
-            <div class="minibox">
-                <h3>Freundliche Community</h3>
+            <div class="minibox" id="info-community">
+                <h3><i></i>Freundliche Community</h3>
                 <p>
                     Sollten einmal Probleme auftreten, bei denen auch die Dokumentation
                     nicht mehr weiterhelfen kann, kann man sich über die <a rel="external" href="http://groups.google.com/group/django-users">Mailingliste</a>
@@ -53,8 +53,8 @@
                     Rat und Tipps von der Django-Community holen.
                 </p>
             </div>
-            <div class="minibox">
-                <h3>Template Engine</h3>
+            <div class="minibox" id="info-templateengine">
+                <h3><i></i>Template Engine</h3>
                 <p>
                     Die Templates werden in einer eigenen <em>Templatesprache</em> geschrieben. Sie
                     bringt bereits viele nützliche Helfer zum Erstellen der Ausgabe mit.
@@ -62,8 +62,8 @@
                     erweitert werden.
                 </p>
             </div>
-            <div class="minibox">
-                <h3><i class="idea"></i>Dokumentation</h3>
+            <div class="minibox" id="info-documentation">
+                <h3><i></i>Dokumentation</h3>
                 <p>
                     Django besitzt eine hervorragende (englische) Dokumentation mit vielen
                     nützlichen Beispielen. Die Django Dokumentation ist

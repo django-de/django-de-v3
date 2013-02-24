@@ -484,6 +484,10 @@ footer {
   height: 116px;
   margin-top: 20px;
 }
+footer p {
+  font-size: 80%;
+  opacity: 0.8;
+}
 
 div.pagination {
   border-top: 1px solid #ccc;

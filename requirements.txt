@@ -6,13 +6,13 @@
 
 # To convert scss files to stylesheets run:
 #   `compass watch`
-# inside the projecdt/static filder.
+# inside the project/static folder.
 
 
 # -----------------------------------------------------------------------------
 # Python requirements
 # -----------------------------------------------------------------------------
-Django==1.4.3
+Django==1.4.5
 Markdown==2.2.1
 South==0.7.6
 django-pagination==1.0.7

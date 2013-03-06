@@ -35,7 +35,7 @@ class NewsItem(models.Model):
     author = models.ForeignKey(User, verbose_name=_('Author'), null=True,
         blank=True)
 
-    twitter_id = models.IntegerField(verbose_name=_('Twitter ID'),
+    twitter_id = models.BigIntegerField(verbose_name=_('Twitter ID'),
         blank=True, null=True)
 
     objects = NewsItemManager()

@@ -34,7 +34,8 @@ class ShowEventsToken(template.Node):
         else:
             num = self.num
 
-        items = reversed(models.Event.objects.filter(start__gte=date.today()).order_by('start')[:num])
+        items = models.Event.objects.filter(
+            start__gte=date.today()).order_by('start')[:num]
         tmpl = template.loader.get_template(template_name)
         context.push()
         context.update({'object_list': items})

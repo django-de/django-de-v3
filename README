@@ -13,3 +13,18 @@ werden.
 Für die Darstellung wird zusätzlich noch folgende Einstellung benötigt:
 
 * TWITTER_USERNAME
+
+
+Deployment auf Heroku
+---------------------
+
+heroku config:add DJANGO_SETTINGS_MODULE=django_de.settings_heroku
+heroku config:add DJANGO_SECRET_KEY=secret
+heroku config:add DJANGO_ADMIN_EMAIL=root@localhost
+heroku config:add TWITTER_CONSUMER_KEY=key
+heroku config:add TWITTER_CONSUMER_SECRET=secret
+heroku config:add TWITTER_ACCESS_TOKEN_KEY=key
+heroku config:add TWITTER_ACCESS_TOKEN_SECRET=secret
+heroku config:add AWS_ACCESS_KEY_ID=key
+heroku config:add AWS_SECRET_ACCESS_KEY=secret
+heroku config:add AWS_STORAGE_BUCKET_NAME=bucket

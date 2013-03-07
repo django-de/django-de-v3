@@ -15,7 +15,7 @@
         <ul class="dates">
             {% for month in months %}
                 {% with m=month|date:"m" y=month|date:"Y" %}
-                    <li><a href="{% url news_list year=y month=m %}">{{ month|date:"F Y" }}</a></li>
+                    <li><a href="{% url "news_list" year=y month=m %}">{{ month|date:"F Y" }}</a></li>
                 {% endwith %}
             {% endfor %}
         </ul>

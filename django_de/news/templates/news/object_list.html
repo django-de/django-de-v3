@@ -14,7 +14,7 @@
                     {{ object.body|safe|truncatewords_html:20 }}
                     <a href="{{ object.get_absolute_url }}">mehr...</a>
                 {% else %}
-                    {{ object.title }}
+                    {{ object.title|urlize }}
                 {% endif %}
             </small>
         </div>

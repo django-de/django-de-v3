@@ -430,6 +430,14 @@ body.imprint, body.about, body.association {
     strong {
         font-weight: bold;
     }
+    small {
+        font-size: 12px;
+    }
+    article {
+        ul, ol { margin-left: 20px; padding-bottom: 20px; }
+        ul li {  list-style-type: square; }
+        ol li { list-style-type: decimal; }
+    }
 }
 
 code {

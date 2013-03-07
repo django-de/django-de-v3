@@ -11,6 +11,8 @@ $dark-green: #05372b;
 $green: #96ca0d;
 
 $grey: #dfe7e5;
+$hover-color: #992b07;
+$footer-color: #eaf2f0;
 
 @import "fonts";
 
@@ -48,6 +50,10 @@ i {
 
 a {
     color: $dark-green;
+}
+
+a:hover {
+    color: $hover-color;
 }
 
 div.container {
@@ -115,8 +121,8 @@ header {
 }
 body.home {
     .content {
-        //background: url(../img/homebg.png) 50% -125px no-repeat #dfe7e5;    
-        background: url(../img/homebg-b.png) 50% 0px no-repeat #dfe7e5;    
+        //background: url(../img/homebg.png) 50% -125px no-repeat #dfe7e5;
+        background: url(../img/homebg-b.png) 50% 0px no-repeat #dfe7e5;
     }
 }
 div.home {
@@ -289,12 +295,12 @@ div.content {
 
     div.minibox {
         //border-bottom: 1px solid #cccccc;
-        
+
         padding-bottom: 30px;
         padding-top: 15px;
         margin-bottom: 0px;
-        
-        
+
+
         h3 {
             font-size: 20px;
             padding-left: 10px;
@@ -352,10 +358,12 @@ h1 {
     margin: 0 1px 15px 1px;
     border-bottom: 25px solid $green;
     text-align: center;
+
     span {
         background: #011711;
         line-height: 38px;
-        padding: 0px 4px;
+        padding: 5px 10px;
+        text-shadow: 0 1px 1px black;
         &:before, &:after {
             content: " ";
         }
@@ -363,7 +371,7 @@ h1 {
 }
 body.listing, article {
     #main {
-        padding: 15px 8px;
+        padding: 30px;
     }
     #content {
         @include span-columns(10);
@@ -381,9 +389,11 @@ body.article #content {
 }
 
 footer {
-    background: url(../img/footer.png) top center no-repeat;
-    height: 116px;
-    margin-top: 20px;
+    //background: url(../img/footer.png) top center no-repeat;
+    background-color: $footer-color;
+    padding: 20px 20px 50px 20px;
+    margin: 0 1px;
+
     p {
         font-size: 80%;
         opacity: 0.8;
@@ -413,12 +423,13 @@ div.pagination {
 body.imprint, body.about, body.association {
     h2 {
         font-size: 16px;
-        padding-left: 10px;
+        padding: 5px 10px;
         margin-bottom: 10px;
         background-color: #95c537;
         line-height: 27px;
         font-weight: normal;
         color: #ffffff;
+        text-shadow: 1px 1px 1px #666;
     }
     p {
         padding-bottom: 20px;

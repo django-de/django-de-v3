@@ -148,6 +148,10 @@ a {
   color: #05372b;
 }
 
+a:hover {
+  color: #992b07;
+}
+
 div.container {
   margin: auto;
   width: 968px;
@@ -448,14 +452,15 @@ h1 {
 h1 span {
   background: #011711;
   line-height: 38px;
-  padding: 0px 4px;
+  padding: 5px 10px;
+  text-shadow: 0 1px 1px black;
 }
 h1 span:before, h1 span:after {
   content: " ";
 }
 
 body.listing #main, article #main {
-  padding: 15px 8px;
+  padding: 30px;
 }
 body.listing #content, article #content {
   width: 62.10526%;
@@ -479,9 +484,9 @@ body.article #content p, body.article #content ul, body.article #content table, 
 }
 
 footer {
-  background: url(../img/footer.png) top center no-repeat;
-  height: 116px;
-  margin-top: 20px;
+  background-color: #eaf2f0;
+  padding: 20px 20px 50px 20px;
+  margin: 0 1px;
 }
 footer p {
   font-size: 80%;
@@ -489,7 +494,7 @@ footer p {
 }
 
 div.pagination {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin-top: 10px;
   padding-top: 10px;
 }
@@ -509,12 +514,13 @@ div.pagination span.disabled, div.pagination a.disabled {
 
 body.imprint h2, body.about h2, body.association h2 {
   font-size: 16px;
-  padding-left: 10px;
+  padding: 5px 10px;
   margin-bottom: 10px;
   background-color: #95c537;
   line-height: 27px;
   font-weight: normal;
   color: #ffffff;
+  text-shadow: 1px 1px 1px #666;
 }
 body.imprint p, body.about p, body.association p {
   padding-bottom: 20px;

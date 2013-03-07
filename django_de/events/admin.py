@@ -6,6 +6,7 @@ from .models import Event, Source
 class EventAdmin(admin.ModelAdmin):
     list_display = ['title', 'start', 'end', 'slug']
     date_hierarchy = 'start'
+    list_filter = ('source',)
 
 
 class SourceAdmin(admin.ModelAdmin):

@@ -1,5 +1,5 @@
-from datetime import date
 from django import template
+from django.utils.timezone import now
 
 from .. import models
 
@@ -35,7 +35,9 @@ class ShowEventsToken(template.Node):
             num = self.num
 
         items = models.Event.objects.filter(
-            start__gte=date.today()).order_by('start')[:num]
+            start__gte=now().replace(hour=0, minute=0, second=0)
+        ).order_by('start')[:num]
+
         tmpl = template.loader.get_template(template_name)
         context.push()
         context.update({'object_list': items})

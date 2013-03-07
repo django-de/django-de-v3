@@ -1,0 +1,60 @@
+{% extends "article_base.html" %}
+{% load markup %}
+
+{% block title %}Mitgliederversammlungen | django-de.org{% endblock %}
+{% block headline %}Mitgliederversammlungen{% endblock %}
+
+{% block bodycls %}association{% endblock %}
+
+{% block article %}
+    <h2>Regeln zur Durchführung einer digitalen Mitgliederversammlung</h2>
+    <p>
+        Die Mitglieder des Deutschen Django-Vereins e. V. sind im gesamten deutschsprachigen Raum verteilt;
+        daher ist es oft nicht praktikabel, ein lokales Vor-Ort-Treffen aller Mitglieder zur Organisation
+        einer satzungsmäßigen Mitgliederversammlung durchzuführen. Zu diesem Zweck und unter der Voraussetzung,
+        dass die Tagesordnungspunkte dies zulassen, haben wir einfache Regeln zur Durchführung einer
+        digitalen Mitgliederversammlung (DMV) aufgestellt.
+    </p>
+    <h2>Ankündigung</h2>
+    <p>
+        Die Einladung zur digitalen Mitgliederversammlung erfolgt satzungskonform mit einer 14-tägigen Frist.
+        Als Medium für Diskussionen und Beschlüsse wird konventionell auf E-Mail zurückgegriffen. Die Einladung
+        enthält die Liste aller Tagesordnungspunkte (TOP) sowie einen angegebenen, mehrtägigen Zeitraum, in dem
+        die Diskussion zu den einzelnen TOP auf der Mitglieder-Mailingliste erfolgt. Der Zeitraum wird individuell
+        je nach Umfang der TOP-Liste vom einladenden Vorstand festgelegt.
+    </p>
+    <h2>Durchführung</h2>
+    <p>
+        Zu Beginn der Diskussion wird zu jedem TOP ein E-Mail-Thread mit dem Anliegen und ggf. dem Antrag auf
+        Beschluss eröffnet, in diesem jedes Mitglied die Möglichkeit erhält, sich ausgiebig zu den Themen zu
+        äußern und mit anderen Mitgliedern zu diskutieren. Neben den einzelnen Threads wird ein digitaler
+        Stimmzettel zur Verfügung gestellt, auf dem die Teilnehmer ihre Stimmen zu den einzelnen TOP abgeben
+        können. Jeder eingegangene Stimmzettel zählt als Teilnahme an der Mitgliederversammlung und wird im
+        Protokoll unter den Anwesenden vermerkt. Ein leer abgegebener Stimmzettel zählt als Stimmenthaltung
+        zu allen Themen. Bei mehrfach abgegebenen Stimmzetteln zählt als einziger der zuletzt eingesandte.
+        Der ausgefüllte Stimmzettel wird per E-Mail an die im Stimmzettel angegebene E-Mail-Adresse
+        (= Versammlungsleiter + Schriftführer) geschickt.
+    </p>
+    <h2>Abschluss und Protokoll</h2>
+    <p>
+        Bis zum Diskussionsende müssen alle Stimmzettel eingegangen sein. Jeder Eingang wird vom Schriftführer
+        per E-Mail bestätigt. Zu jedem TOP findet eine Stimmauswertung statt, die im jeweiligen TOP-Thread
+        mitgeteilt wird. Der Schriftführer fertigt auf Basis der Diskussion und digitalen Stimmzettel ein
+        Protokoll an. Die digitale Mitgliederversammlung endet automatisch mit Ablauf des in der Einladung
+        angegebenen Zeitraums. Alle verspätet eingegangenen Stimmzettel sind ungültig und werden nicht berücksichtigt.
+    </p>
+{% endblock %}
+
+{% block aside %}
+	<div class="minibox">
+	    <h2>Vergangene Mitgliederversammlungen</h2>
+	    <ul>
+            <li><a href="{{ STATIC_URL }}docs/1_Mitgliederversammlung_2011.pdf">
+                <strong>November 2011</strong><br /><small>1. Mitgliederversammlung 2011 (digital)</small></a></li>
+            <li><a href="{{ STATIC_URL }}docs/1_Mitgliederversammlung_2010.pdf">
+                <strong>Februar 2010</strong><br /><small>1. Mitgliederversammlung 2010 (digital)</small></a></li>
+            <li><a href="{{ STATIC_URL }}docs/Gruendungsprotokoll.pdf">
+                <strong>Samstag, 05.12.2009</strong><br /><small>Gründungsversammlung (co-up)</small></a></li>
+		</ul>
+	</div>
+{% endblock %}

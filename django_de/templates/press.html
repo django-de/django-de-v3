@@ -1,0 +1,58 @@
+{% extends "article_base.html" %}
+{% load markup %}
+
+{% block title %}Presseinformationen | django-de.org{% endblock %}
+{% block headline %}Presseinformationen{% endblock %}
+
+{% block bodycls %}association{% endblock %}
+
+{% block article %}
+    <h2>Kontakt und Presseanfragen</h2>
+    <p>
+        Uns erreicht man am besten per E-Mail an <a href="mailto:presse@django-de.org">presse@django-de.org</a>
+        sowie telefonisch unter +49 341 39 299 290 (Mo. - Fr. 16:00 Uhr bis 18:00 Uhr).
+    </p>
+    <p>
+        Weitere Informationskanäle sind Twitter <a href="https://twitter.com/djangode" rel="external">@djangode</a>
+        und die inoffizielle Mailingliste <a href="http://groups.google.com/group/django-de" rel="external">django-de@googlegroups.com</a>.
+    </p>
+    <h2>Über das Presseteam</h2>
+    <p>
+        Zweck des Deutschen Django-Vereins e. V. ist es gemäß seiner Satzung, "Öffentlichkeitsarbeit
+        und Telepublishing in allen Medien durchzuführen". Das Presseteam organisiert sich im Arbeitskreis
+        Öffentlichkeitsarbeit (AK ÖffA) wird diesem Zweck gerecht und übernimmt jegliche publizistischen
+        und journalistischen Tätigkeiten des Vereins.
+    </p>
+    <p>
+        Die deutschsprachige Presse wird vom AK ÖffA mit Pressemitteilungen rund um Vereinsangelegenheiten
+        und erwähnenswerten Aktivitäten zum Django-Projekt versorgt. Weiter steht der AK ÖffA Journalisten
+        als Ansprechpartner für Presseanfragen zum Django-Projekt und zum Verein zur Verfügung. Der AK ÖffA
+        stellt Pressematerial zur freien Verwendung in journalistischen Publikationen her und versorgt
+        Kongresse und Vereinsveranstaltungen mit Informationsmaterial.
+    </p>
+    <p>
+        Um die Entwicklung und Erwähnung des Django-Projektes und der Vereinsaktivitäten in der deutschsprachigen
+        Presse zu dokumentieren, pflegt der AK ÖffA einen Pressespiegel.
+    </p>
+{% endblock %}
+
+{% block aside %}
+	<div class="minibox">
+	    <h2>Pressespiegel</h2>
+	    <ul>
+            <li><a href="http://www.heise.de/open/meldung/DjangoCon-Europe-976313.html" rel="external">
+                <strong>DjangoCon Europe 2010</strong>,<br />heise online, 13.04.2010</a></li>
+            <li><a href="http://www.h-online.com/open/news/item/DjangoCon-Europe-2010-976491.html" rel="external">
+                <strong>DjangoCon Europe 2010</strong>,<br />The H online, 13.04.2010</a></li>
+            <li><a href="http://t3n.de/socialnews/Webentwicklung/Django-de--News-DjangoCon-Europe-vom-24--2652010-in-Berlin/" rel="external">
+                <strong>DjangoCon Europe 2010</strong>,<br />t3n Social News, 13.04.2010</a></li>
+		</ul>
+	</div>
+	<div class="minibox">
+	    <h2>Pressematerial</h2>
+	    <ul>
+            <li><a href="{{ STATIC_URL }}docs/Django_Flyer_2010.pdf"><strong>Was ist Django?</strong></a><br />
+                Faltblatt DIN A4, Wickelfalz, 6 Seiten; Stand 17.08.2010</li>
+		</ul>
+	</div>
+{% endblock %}

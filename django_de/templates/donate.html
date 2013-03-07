@@ -1,0 +1,65 @@
+{% extends "article_base.html" %}
+{% load markup %}
+
+{% block title %}Spenden | django-de.org{% endblock %}
+{% block headline %}Den Verein mit Spenden unterstützen{% endblock %}
+
+{% block bodycls %}association{% endblock %}
+
+{% block article %}
+    <p>
+        Wie jeder Verein sind auch wir auf Spenden angewiesen, um unserem Vereinszweck
+        voll und ganz nachzukommen. Wir unterst&uuml;tzen die deutschsprachige
+        Django-Community, veranstalten Konferenzen und r&uuml;cken durch Pressearbeit
+        Django mehr und mehr in den Fokus der &Ouml;ffentlichkeit.
+    </p>
+    <p>
+        <strong>Hinweis zur steuerlichen Absetzbarkeit:</strong> Wir sind nicht gemeinn&uuml;tzig,
+        weshalb wir keine steuerlich relevanten Quittungen ausstellen k&ouml;nnen.
+    </p>
+    <h2>Zweckgebundene Spende</h2>
+    <p>
+        Selbstverst&auml;ndlich kannst du deine Spende an einen besonderen Vereinszweck binden.
+        Diesen gibst du einfach im entsprechenden Feld bei PayPal an oder im Verwendungszweck
+        der Bank&uuml;berweisung.<br />
+        <br />
+        Gibst du keinen Zweck an, wird deine Spende im Rahmen des Vereinszwecks frei genutzt.
+    </p>
+    <h2>Beispiele f&uuml;r m&ouml;gliche Zwecke:</h2>
+    <ul>
+        <li><strong>Unterst&uuml;tzung der lokalen User-Groups</strong><br />
+            durch Bereitstellung von Hardware, R&auml;umlichkeiten, etc.</li>
+        <li><strong>Veranstaltungen</strong><br />
+            Code Sprints, Developer Days, Konferenzen, etc.</li>
+        <li><strong>&Ouml;ffentlichkeitsarbeit</strong><br />
+            Herstellung von PR-Material, Betreiben eines eigenen Django-Stands auf Messen<br />
+            (wie z.B. auf den Chemnitzer Linuxtagen oder auf der FrOSCon, etc.)</li>
+    </ul>
+{% endblock %}
+
+{% block aside %}
+    <div class="minibox" style="padding-bottom:10px">
+        <h2>Spenden per PayPal</h2>
+        <p>
+            Die einfachste und schnellste M&ouml;glichkeit einer Spende ist per PayPal an kontakt@django-de.org.
+            Ein Klick auf den folgenden Button gen&uuml;gt, um die Spende abzuschlie&szlig;en:
+        </p>
+        <p style="padding:0px;text-align:center">
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=kontakt@django-de.org&amp;lc=DE&amp;currency_code=EUR"><img src="https://www.paypal.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" alt="" /></a>
+        </p>
+    </div>
+    <div class="minibox">
+        <h2>Spenden per Bank&uuml;berweisung</h2>
+        <p>
+            Selbstverst&auml;ndlich ist auch jederzeit eine Spende per Bank&uuml;berweisung
+            m&ouml;glich. Unsere Bankdaten lauten:
+        </p>
+        <p>
+            <strong>Deutscher Django-Verein e. V.</strong><br />
+            Kontonummer: 27 222 08<br />
+            Bankleitzahl: 505 30 000<br /><small>(Cronbank AG Dreieich)</small><br />
+            BIC: GENODE51CRO<br />
+            IBAN: DE58505300000002722208<br />
+        </p>
+    </div>
+{% endblock %}

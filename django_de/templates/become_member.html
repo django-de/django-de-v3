@@ -1,0 +1,85 @@
+{% extends "article_base.html" %}
+{% load markup %}
+
+{% block title %}Mitglied werden | django-de.org{% endblock %}
+{% block headline %}Wie werde ich Mitglied im Deutschen Django Verein?{% endblock %}
+
+{% block bodycls %}association{% endblock %}
+
+{% block article %}
+    <p>
+        Wir freuen uns sehr über dein Interesse an unserem Verein! Die folgende
+        Auflistung soll ein paar der am meisten gestellten Fragen beantworten.
+    </p>
+    <p>Für <strong>Schnellentschlossene</strong> die Kurzanleitung:</p>
+    <ol>
+        <li><a href="{{ STATIC_URL }}docs/Mitgliedsantrag.pdf" rel="external">
+            Antragsformular für die Mitgliedschaft</a> herunterladen</li>
+        <li><a href="{{ STATIC_URL }}docs/Einzugsermaechtigung.pdf" rel="external">
+            Einzugsermächtigung für den Einzug von Mitgliedsbeiträgen</a>* herunterladen</li>
+        <li>Beide Formulare ausfüllen (am Computer möglich), ausdrucken und unterschreiben</li>
+        <li>Sende beide Schreiben als Scan per E-Mail, per Fax oder Post an unsere Adresse</li>
+        <li><strong>Glückwunsch!</strong> Du bist Mitglied, wenn du von uns kurze Zeit später
+            die Aufnahmebestätigung erhalten hast.</li>
+    </ol>
+    <p>
+        <small>
+            * optional; jedoch erleichterst du uns die Arbeit, wenn die Mitgliedsbeiträge
+            fällig werden. Zum Einzug benötigen wir die Kontoangaben deines deutschen
+            Giro-/Kontokorrentkontos. Mitglieder außerhalb Deutschlands ohne deutsches
+            Bankkonto können von dieser Möglichkeit leider derzeit keinen Gebrauch machen.
+        </small>
+    </p>
+    <h2>Wie kann ich Mitglied werden?</h2>
+    <p>
+        Ganz einfach, dafür bist Du bereits auf der richtigen Seite. Wie oben beschrieben musst
+        Du nur das <a href="{{ STATIC_URL }}docs/Mitgliedsantrag.pdf" rel="external">Antragsformular
+        herunterladen</a>, genau durchlesen und unterschrieben an uns zurücksenden (per Fax oder Post).
+        Da die Mitgliedschaft kostenpflichtig ist, benötigen wir desweiteren die Kontoangaben Deines
+        deutschen Giro-/Kontokorrentkontos. Siehe dazu auch den Hinweis zur
+        <a href="{{ STATIC_URL }}docs/Einzugsermaechtigung.pdf" rel="external">Einzugsermächtigung</a>.
+        Die Einzugsermächtigung hilft uns, die Abrechnung der Mitgliedsbeiträge zu vereinfachen.
+        Wenn du uns keine Ermächtigung geben möchtest, kannst du natürlich auch deinen Mitgliedsbeitrag
+        nach Erhalt der Abrechnung auf unser Konto überweisen.
+    </p>
+    <h2>Was kostet mich die Mitgliedschaft?</h2>
+    <p>
+        Auszug aus der <a href="{{ STATIC_URL }}docs/Geschaeftsordnung.pdf" rel="external">aktuellen Geschäftsordnung</a>:<br />
+        <br />
+        Der Verein erhebt gemäß § 8 der <a href="{{ STATIC_URL }}docs/Satzung.pdf" rel="external">Vereinssatzung</a> Mitgliedsbeiträge wie folgt:
+    </p>
+    <ul>
+        <li>30,00 € für eine ermäßigte Mitgliedschaft</li>
+        <li>60,00 € für eine normale Mitgliedschaft</li>
+        <li>120,00 € für eine erweiterte Mitgliedschaft mit förderndem Charakter</li>
+        <li>600,00 € für eine Firmenmitgliedschaft</li>
+    </ul>
+    <h2>Kann ich meinen Mitgliedsbeitrag von der Steuer absetzen?</h2>
+    <p>
+        Bis jetzt ist der Verein noch nicht gemeinnützig. Mitgliedsbeiträge und Spenden
+        können also nicht von der Steuer abgesetzt werden.
+    </p>
+    <h2>Ich wohne nicht in Deutschland: Kann ich trotzdem Mitglied werden?</h2>
+    <p>
+        Aber natürlich! Wir haben besonderen Wert darauf gelegt, nicht nur regional begrenzt
+        für alle innerdeutschen, sondern für alle (in der Regel deutschsprachigen) Djangonauten
+        (zum Beispiel aus Österreich oder der Schweiz) tätig sein zu können. Deutschsprachig ist
+        ein nice-to-have (offensichtlich), aber kein Muss. Wir haben keinerlei festgeschriebene
+        Beitrittsbeschränkungen. Jeder ist gerne bei uns willkommen.
+    </p>
+{% endblock %}
+
+{% block aside %}
+	<div class="minibox">
+	    <h2>Wichtige Dokumente/Downloads</h2>
+	    <ul>
+            <li><a href="{{ STATIC_URL }}docs/Mitgliedsantrag.pdf" rel="external">
+                Antragsformular zur Mitgliedschaft<br /><small>(am Computer ausfüllbar)</small></a></li>
+            <li><a href="{{ STATIC_URL }}docs/Einzugsermaechtigung.pdf" rel="external">
+                Einzugsermächtigung für Mitgliedsbeiträge<br /><small>(empfohlen, am Computer ausfüllbar)</small></a></li>
+			<li><a href="{{ STATIC_URL }}docs/Satzung.pdf" rel="external">Vereinssatzung</a></li>
+			<li><a href="{{ STATIC_URL }}docs/Geschaeftsordnung.pdf" rel="external">Geschäftsordnung</a></li>
+		</ul>
+	</div>
+{% endblock %}
+

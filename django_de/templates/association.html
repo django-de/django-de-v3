@@ -2,7 +2,7 @@
 {% load markup %}
 
 {% block title %}Über den Verein | django-de.org{% endblock %}
-{% block headline %}Über den Verein{% endblock %}
+{% block headline %}Über den Deutschen Django Verein{% endblock %}
 
 {% block bodycls %}association{% endblock %}
 
@@ -16,3 +16,16 @@
         Weitere Informationen rund um den Verein werden wir in Kürze hier veröffentlichen.
     </p>
 {% endblock %}
+
+{% block aside %}
+	<div class="minibox">
+	    <h2>Weitere Informationen</h2>
+	    <ul>
+            <li><a href="/verein/mitglied-werden/">Wie werde ich Mitglied?</a></li>
+            <li><a href="/verein/spenden/">Den Verein mit Spenden unterstützen</a></li>
+            <li><a href="/verein/presse/">Pressekontakt und Pressematerialien</a></li>
+            <li><a href="/verein/mitgliederversammlungen/">Mitgliederversammlungen</a></li>
+		</ul>
+	</div>
+{% endblock %}
+

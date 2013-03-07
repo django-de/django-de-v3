@@ -21,4 +21,8 @@ urlpatterns = patterns('',
     (r'^impressum/$', TemplateView.as_view(template_name='imprint.html')),
     (r'^ueber-django/$', TemplateView.as_view(template_name='about.html')),
     (r'^verein/$', TemplateView.as_view(template_name='association.html')),
+    (r'^verein/mitglied-werden/$', TemplateView.as_view(template_name='become_member.html')),
+    (r'^verein/spenden/$', TemplateView.as_view(template_name='donate.html')),
+    (r'^verein/presse/$', TemplateView.as_view(template_name='press.html')),
+    (r'^verein/mitgliederversammlungen/$', TemplateView.as_view(template_name='member_meetings.html')),
 )

@@ -3,9 +3,6 @@ import sys
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 PYTHON_BIN = os.path.dirname(sys.executable)
-if not os.path.exists(os.path.join(PYTHON_BIN, 'activate_this.py')):
-    print "Need to run in an virtualenv"
-
 VAR_ROOT = os.path.join(os.path.dirname(PYTHON_BIN), 'var')
 if not os.path.exists(VAR_ROOT):
     os.mkdir(VAR_ROOT)

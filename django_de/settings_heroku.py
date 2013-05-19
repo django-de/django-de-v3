@@ -9,7 +9,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = (
     'djangode.herokuapp.com',
-    'django-de.org'
+    'django-de.org',
+    'www.django-de.org',
+    'localhost',
 )
 
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')

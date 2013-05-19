@@ -31,12 +31,12 @@ class NewsItem(models.Model):
     slug = models.SlugField(verbose_name=_('Slug'), blank=True)
     body = models.TextField(verbose_name=_('Body'), blank=True, null=True)
     pub_date = models.DateTimeField(verbose_name=_('Published at'),
-        default=datetime.datetime.now)
+                                    default=datetime.datetime.now)
     author = models.ForeignKey(User, verbose_name=_('Author'), null=True,
-        blank=True)
+                               blank=True)
 
     twitter_id = models.BigIntegerField(verbose_name=_('Twitter ID'),
-        blank=True, null=True)
+                                        blank=True, null=True)
 
     objects = NewsItemManager()
 
@@ -53,9 +53,9 @@ class NewsItem(models.Model):
         if not self.body:
             return self.title
 
-        item_url = 'http://%s/%s' % (
+        item_url = 'http://%s%s' % (
             Site.objects.get_current().domain,
-            url_reverse('news_shortcut', str(self.pk))
+            url_reverse('news_shortcut', kwargs={'pk': str(self.pk)})
         )
 
         return self.title[:-(len(item_url)+4)] + '... ' + item_url
@@ -66,7 +66,7 @@ class NewsItem(models.Model):
 
     def get_twitter_url(self):
         return 'http://twitter.com/%s/status/%d' % (settings.TWITTER_USERNAME,
-            self.twitter_id,)
+                                                    self.twitter_id,)
 
     class Meta:
         ordering = ['-pub_date']

@@ -1,4 +1,4 @@
-{% load pagination_tags %}
+{% load pagination_tags news_tags %}
 <ul class="list">
     {% autopaginate object_list %}
     {% for object in object_list %}
@@ -8,7 +8,7 @@
             <span class="day">{{ object.pub_date|date:"d" }}</span>
         </div>
         <div class="item">
-            <span>{{ object.title|truncatechars:40 }}</span><br />
+            <h2><a href="{% news_url object %}">{{ object.title|truncatechars:40 }}</a></h2>
             <small>
                 {% if object.body %}
                     {{ object.body|safe|truncatewords_html:20 }}

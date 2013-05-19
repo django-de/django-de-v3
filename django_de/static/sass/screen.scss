@@ -262,9 +262,12 @@ div.content {
                 margin-left: 48px;
                 padding-top: 17px;
 
-                span {
+                span, h2 {
                     font-weight: bold;
                     font-size: 18px;
+                }
+                h2 a {
+                    text-decoration: none;
                 }
                 small {
                     font-size: 12px;

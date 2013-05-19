@@ -76,3 +76,14 @@ def do_show_news(parser, token):
         num = val
 
     return ShowNewsToken(num, tmpl)
+
+
+@register.simple_tag
+def news_url(newsitem):
+    """
+    Returns the URL of a newsitem depending on if it is based on a twitter
+    post or not.
+    """
+    if newsitem.twitter_id:
+        return newsitem.get_twitter_url()
+    return newsitem.get_absolute_url()

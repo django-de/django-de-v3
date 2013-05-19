@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -361,9 +362,12 @@ div.content ul.list li div.item {
   margin-left: 48px;
   padding-top: 17px;
 }
-div.content ul.list li div.item span {
+div.content ul.list li div.item span, div.content ul.list li div.item h2 {
   font-weight: bold;
   font-size: 18px;
+}
+div.content ul.list li div.item h2 a {
+  text-decoration: none;
 }
 div.content ul.list li div.item small {
   font-size: 12px;

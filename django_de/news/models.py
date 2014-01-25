@@ -27,7 +27,7 @@ class NewsItem(models.Model):
     representation of such an item also includes a link to the post
     and a respectively shortened title.
     """
-    title = models.CharField(verbose_name=_('Title'), max_length=140)
+    title = models.CharField(verbose_name=_('Title'), max_length=200)
     slug = models.SlugField(verbose_name=_('Slug'), blank=True)
     body = models.TextField(verbose_name=_('Body'), blank=True, null=True)
     pub_date = models.DateTimeField(verbose_name=_('Published at'),
